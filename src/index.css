@@ -1,0 +1,59 @@
+:root {
+  --sans:
+    "Forum", Georgia, "Times New Roman", serif;
+  --mono:
+    "SFMono-Regular", Consolas, "Liberation Mono", "Courier New", monospace;
+  --text-strong: #f5f7f2;
+  --text-muted: #b4bbba;
+  --text-soft: #7f8b8b;
+  --accent-green: #7ee7d3;
+  --accent-coral: #ff7054;
+  --accent-amber: #ffbf66;
+  --accent-violet: #9b7dff;
+  color: var(--text-muted);
+  background: #07080d;
+  color-scheme: dark;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100svh;
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100svh;
+}

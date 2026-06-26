@@ -1,0 +1,178 @@
+[
+  {
+    "timestamp": "2026-06-26T09:46:03.191Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 90
+      }
+    ],
+    "added": 12,
+    "updated": 222,
+    "modelCount": 361
+  },
+  {
+    "timestamp": "2026-06-26T09:31:51.502Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 86
+      }
+    ],
+    "added": 0,
+    "updated": 206,
+    "modelCount": 337
+  },
+  {
+    "timestamp": "2026-06-26T09:30:42.754Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 86
+      }
+    ],
+    "added": 0,
+    "updated": 206,
+    "modelCount": 337
+  },
+  {
+    "timestamp": "2026-06-26T09:29:06.226Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 86
+      }
+    ],
+    "added": 0,
+    "updated": 206,
+    "modelCount": 337
+  },
+  {
+    "timestamp": "2026-06-26T09:28:38.752Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 86
+      }
+    ],
+    "added": 0,
+    "updated": 206,
+    "modelCount": 337
+  },
+  {
+    "timestamp": "2026-06-26T09:21:19.823Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 86
+      }
+    ],
+    "added": 0,
+    "updated": 206,
+    "modelCount": 337
+  },
+  {
+    "timestamp": "2026-06-26T09:08:35.361Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 240
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 86
+      }
+    ],
+    "added": 286,
+    "updated": 326,
+    "modelCount": 337
+  },
+  {
+    "timestamp": "2026-06-26T08:32:46.333Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 20
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 20
+      }
+    ],
+    "added": 40,
+    "updated": 40,
+    "modelCount": 51
+  }
+]
