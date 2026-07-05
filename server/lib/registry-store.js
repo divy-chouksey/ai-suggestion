@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile, rm } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -8,6 +8,7 @@ const dataDir = path.join(serverRoot, 'data')
 const seedPath = path.join(dataDir, 'model-registry.seed.json')
 const registryPath = path.join(dataDir, 'model-registry.json')
 const historyPath = path.join(dataDir, 'sync-history.json')
+const lockPath = path.join(dataDir, 'registry.lock')
 
 const metricKeys = ['quality', 'affordability', 'speed', 'context', 'privacy', 'availability']
 
@@ -29,6 +30,30 @@ function slug(value) {
     .slice(0, 120)
 }
 
+// Simple robust lock manager
+async function withLock(fn) {
+  await ensureDataDir()
+  let acquired = false
+  for (let i = 0; i < 20; i++) {
+    try {
+      await mkdir(lockPath)
+      acquired = true
+      break
+    } catch (err) {
+      if (err.code !== 'EEXIST') throw err
+      await new Promise((resolve) => setTimeout(resolve, 50))
+    }
+  }
+  if (!acquired) {
+    throw new Error('Timeout acquiring write lock on registry')
+  }
+  try {
+    return await fn()
+  } finally {
+    await rm(lockPath, { recursive: true, force: true }).catch(() => {})
+  }
+}
+
 export function normalizeModel(model) {
   const id = slug(model.id || `${model.provider}-${model.name}`)
   const metrics = {}
@@ -47,6 +72,7 @@ export function normalizeModel(model) {
     bestFor: String(model.bestFor || 'General AI model workflows.'),
     source: String(model.source || 'Unknown source'),
     sourceUrl: String(model.sourceUrl || ''),
+    benchmarkSources: Array.isArray(model.benchmarkSources) ? model.benchmarkSources.map(String).slice(0, 8) : [],
     lastVerified: String(model.lastVerified || new Date().toISOString()),
     confidence: clamp(model.confidence, 0.5),
     pricing: {
@@ -82,6 +108,9 @@ function mergeModels(existing, incoming) {
         ...current?.pricing,
         ...normalized.pricing,
       },
+      benchmarkSources: normalized.benchmarkSources.length
+        ? normalized.benchmarkSources
+        : (current?.benchmarkSources || []),
     })
   }
 
@@ -113,12 +142,12 @@ export async function readRegistry() {
       lastUpdated: seed.lastUpdated || new Date().toISOString(),
       models: (seed.models || []).map(normalizeModel),
     }
-    await writeRegistry(registry.models, { reason: 'initialized from seed registry' })
+    await _writeRegistry(registry.models, { reason: 'initialized from seed registry' })
     return registry
   }
 }
 
-export async function writeRegistry(models, metadata = {}) {
+async function _writeRegistry(models, metadata = {}) {
   await ensureDataDir()
   const registry = {
     version: 1,
@@ -131,42 +160,61 @@ export async function writeRegistry(models, metadata = {}) {
   return registry
 }
 
-export async function upsertModels(incomingModels, metadata = {}) {
-  const registry = await readRegistry()
-  const before = registry.models.length
-  const models = mergeModels(registry.models, incomingModels)
-  const next = await writeRegistry(models, metadata)
+export async function writeRegistry(models, metadata = {}) {
+  return withLock(() => _writeRegistry(models, metadata))
+}
 
-  return {
-    registry: next,
-    before,
-    after: models.length,
-    added: Math.max(0, models.length - before),
-    updated: incomingModels.length,
-  }
+export async function upsertModels(incomingModels, metadata = {}) {
+  return withLock(async () => {
+    const registry = await readRegistry()
+    const before = registry.models.length
+
+    let added = 0
+    let updated = 0
+    const existingIds = new Set(registry.models.map((m) => m.id))
+    for (const model of incomingModels) {
+      const normalized = normalizeModel(model)
+      if (existingIds.has(normalized.id)) {
+        updated++
+      } else {
+        added++
+      }
+    }
+
+    const models = mergeModels(registry.models, incomingModels)
+    const next = await _writeRegistry(models, metadata)
+
+    return {
+      registry: next,
+      before,
+      after: models.length,
+      added,
+      updated,
+    }
+  })
 }
 
 export async function appendSyncHistory(entry) {
-  await ensureDataDir()
+  return withLock(async () => {
+    let history = []
 
-  let history = []
+    try {
+      history = await readJson(historyPath)
+    } catch {
+      history = []
+    }
 
-  try {
-    history = await readJson(historyPath)
-  } catch {
-    history = []
-  }
+    const next = [
+      {
+        timestamp: new Date().toISOString(),
+        ...entry,
+      },
+      ...history,
+    ].slice(0, 50)
 
-  const next = [
-    {
-      timestamp: new Date().toISOString(),
-      ...entry,
-    },
-    ...history,
-  ].slice(0, 50)
-
-  await writeFile(historyPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8')
-  return next
+    await writeFile(historyPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8')
+    return next
+  })
 }
 
 export async function readSyncHistory() {

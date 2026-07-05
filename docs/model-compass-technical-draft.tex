@@ -1,0 +1,375 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue
+}
+
+\lstdefinestyle{code}{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  columns=fullflexible
+}
+
+\title{Model Compass: Technical Design Draft}
+\author{Project Technical Summary}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Model Compass is a local web application that recommends AI models for a user's task. It combines a React frontend, a Node.js API server, a file-backed model registry, optional LLM-based intent extraction, and a scoring engine that ranks models using normalized metrics, hard constraints, category fit, and confidence. The goal is to move from static prototype recommendations toward a data-driven recommendation system that can ingest model catalogs and produce explainable rankings.
+\end{abstract}
+
+\section{System Overview}
+
+The project has two main runtime processes:
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Frontend:} a Vite + React application running at \texttt{http://127.0.0.1:5173}.
+  \item \textbf{Backend API:} a Node.js HTTP server running at \texttt{http://127.0.0.1:8787}.
+\end{itemize}
+
+The frontend collects the user prompt, category filters, advanced constraints, weight overrides, and comparison selections. The backend owns model registry access, prompt parsing, model filtering, scoring, source synchronization, rate limiting, and input validation.
+
+\section{High-Level Request Flow}
+
+\begin{lstlisting}[style=code]
+User
+  -> React UI
+  -> POST /api/recommendations
+  -> sanitize + validate request
+  -> optional LLM parser
+  -> regex fallback parser
+  -> merge prompt intent + structured filters
+  -> hard-filter model registry
+  -> score compatible models
+  -> return ranked recommendations + explanations
+  -> React renders model cards, scoring panel, cost calculator, comparison mode
+\end{lstlisting}
+
+The system is designed so the recommendation path still works without LLM keys. When no LLM key is configured, the server falls back to regex-based prompt analysis and the UI shows a limited-understanding notice.
+
+\section{Frontend Architecture}
+
+The frontend was decomposed from a single large \texttt{App.tsx} file into focused modules.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Module} & \textbf{Responsibility} \\
+\midrule
+\texttt{src/App.tsx} & Layout shell and component composition \\
+\texttt{src/types/index.ts} & Shared TypeScript model, analysis, and filter types \\
+\texttt{src/api/client.ts} & API calls and client-side API error handling \\
+\texttt{src/hooks/useRecommendations.ts} & Recommendation state, debounce, fallback behavior \\
+\texttt{src/hooks/useSync.ts} & Registry sync and sync history state \\
+\texttt{src/lib/scoring.ts} & Browser fallback scoring logic \\
+\texttt{src/lib/constants.ts} & Prompt chips, labels, default weights, provider logos \\
+\texttt{src/components/*} & Search, filters, model cards, scoring, insights, comparison, cost \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Important user-facing components include:
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{SearchBar:} prompt input, submit handling, and quick prompt chips.
+  \item \textbf{FilterStrip:} category, open-model-only, and price filtering.
+  \item \textbf{AdvancedFilters:} use case, budget, latency, privacy, context, and modality constraints.
+  \item \textbf{ModelCard:} individual recommendation display with metrics and reasons.
+  \item \textbf{InsightPanel:} top recommendation summary and detected mode.
+  \item \textbf{ScoringPanel:} weight sliders and scoring formula.
+  \item \textbf{CostCalculator:} monthly cost estimate from token volume and model prices.
+  \item \textbf{ModelComparison:} side-by-side comparison for 2--4 selected models.
+\end{itemize}
+
+\section{Backend API Surface}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Endpoint} & \textbf{Method} & \textbf{Purpose} \\
+\midrule
+\texttt{/api/health} & GET & Server health and registry metadata \\
+\texttt{/api/models} & GET & List/filter registry models \\
+\texttt{/api/recommendations} & POST & Main recommendation endpoint \\
+\texttt{/api/sync} & POST & Pull external catalog data into registry \\
+\texttt{/api/sources} & GET & Return sync source list and sync history \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The server applies request logging, CORS headers, rate limiting, input validation, body size limits, and basic security headers. Recommendation requests are capped at a 10KB body size and prompts are stripped of HTML and truncated to 500 characters.
+
+\section{Environment Configuration}
+
+The backend loads environment variables from the project-root \texttt{.env} file using \texttt{server/lib/env.js}. The file can be committed as a template or placeholder, but real keys should be removed before pushing.
+
+\begin{lstlisting}[style=code]
+GEMINI_API_KEY=
+OPENAI_API_KEY=
+API_PORT=8787
+CORS_ORIGINS=http://127.0.0.1:5173,http://localhost:5173
+ARTIFICIAL_ANALYSIS_API_KEY=
+\end{lstlisting}
+
+Gemini is preferred when both \texttt{GEMINI\_API\_KEY} and \texttt{OPENAI\_API\_KEY} are present. OpenAI is used as the fallback provider.
+
+\section{External APIs Called}
+
+\subsection{Model Catalog Synchronization}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{OpenRouter catalog:} \texttt{GET https://openrouter.ai/api/v1/models}. Used to ingest model IDs, names, context length, pricing, modalities, and provider routing information.
+  \item \textbf{Hugging Face model catalog:} \texttt{GET https://huggingface.co/api/models}. Called with task filters such as \texttt{text-generation}, \texttt{text-to-image}, \texttt{image-to-video}, \texttt{automatic-speech-recognition}, \texttt{text-to-speech}, \texttt{text-to-audio}, and \texttt{sentence-similarity}.
+\end{itemize}
+
+\subsection{Prompt Understanding}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Gemini:} \texttt{POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent}. Used for structured intent extraction when \texttt{GEMINI\_API\_KEY} is set.
+  \item \textbf{OpenAI:} \texttt{POST https://api.openai.com/v1/chat/completions}. Uses \texttt{gpt-4o-mini} for structured intent extraction when \texttt{OPENAI\_API\_KEY} is set and Gemini is unavailable or fails.
+\end{itemize}
+
+\subsection{Benchmark Sources}
+
+The current implementation uses an internal benchmark lookup table in \texttt{server/lib/benchmarks.js}. It stores normalized quality and speed signals from sources such as provider evals, Chatbot Arena-style Elo values, HumanEval, and Artificial Analysis-style TPS/TTFT fields. The \texttt{ARTIFICIAL\_ANALYSIS\_API\_KEY} variable exists as a placeholder for future direct API integration; the current code does not yet call a live Artificial Analysis endpoint.
+
+\section{Prompt Understanding Flow}
+
+The backend creates a standardized intent object with these fields:
+
+\begin{lstlisting}[style=code]
+{
+  category,
+  priorities,
+  constraints: { maxPrice, minContext, mustSelfHost },
+  excludeProviders,
+  excludeModels,
+  negations,
+  useCaseSummary,
+  parserUsed
+}
+\end{lstlisting}
+
+The parser flow is:
+
+\begin{enumerate}[leftmargin=*]
+  \item If an LLM key exists and the prompt is long enough, call Gemini first.
+  \item If Gemini fails or is unavailable, call OpenAI.
+  \item Sanitize the returned JSON into known category and metric enums.
+  \item If no LLM parse is available, use regex rules for category, signals, negations, and constraints.
+  \item Merge parsed intent with structured UI filters before ranking.
+\end{enumerate}
+
+\section{Model Registry and Synchronization}
+
+The registry is JSON-backed and stored in \texttt{server/data/model-registry.json}. A seed registry exists at \texttt{server/data/model-registry.seed.json}. The registry store normalizes all models into a common schema:
+
+\begin{lstlisting}[style=code]
+{
+  id, name, provider, category, access,
+  modalities, bestFor, source, sourceUrl,
+  benchmarkSources, lastVerified, confidence,
+  pricing: { unit, inputPerMillion, outputPerMillion },
+  contextLength,
+  metrics: {
+    quality, affordability, speed, context, privacy, availability
+  }
+}
+\end{lstlisting}
+
+Synchronization works as follows:
+
+\begin{lstlisting}[style=code]
+POST /api/sync
+  -> fetch OpenRouter models
+  -> fetch Hugging Face task-filtered models
+  -> map raw source data into ModelProfile objects
+  -> inject curated coding models
+  -> enrich benchmarkSources
+  -> upsert into registry with file lock
+  -> append sync history
+\end{lstlisting}
+
+The registry store uses a simple directory-based lock file to reduce concurrent write corruption risk. The API also keeps a 60-second in-memory registry cache to avoid reading the JSON file on every request.
+
+\section{Metric Normalization}
+
+Each model is ranked using normalized metric values in the range $[0,1]$.
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Quality:} benchmark lookup when available; otherwise source-specific heuristics.
+  \item \textbf{Affordability:} derived from blended input/output price per million tokens.
+  \item \textbf{Speed:} benchmark TPS/TTFT when available; otherwise model-name heuristics.
+  \item \textbf{Context:} derived from context length using a logarithmic scale.
+  \item \textbf{Privacy:} categorical score from access model and provider posture.
+  \item \textbf{Availability:} source metadata, popularity, and curated confidence.
+\end{itemize}
+
+For affordability, the system computes a blended price:
+
+\[
+P = 0.45P_{input} + 0.55P_{output}
+\]
+
+and maps it into a bounded score:
+
+\[
+A = \operatorname{clamp}\left(1 - \frac{\log_{10}(P + 1)}{2.1}\right)
+\]
+
+For context:
+
+\[
+X_{context} = \operatorname{clamp}\left(\frac{\log_{10}(\text{contextLength})}{6}\right)
+\]
+
+\section{Scoring Method}
+
+The current ranking function is a hybrid between a weighted-additive utility model and a Cobb-Douglas-style multiplicative adjustment. It is not a pure Cobb-Douglas product over every metric. This choice avoids making one weak metric reduce the whole score to near zero while still preserving multiplicative penalties for poor category fit and low confidence.
+
+\subsection{Weighted Metric Utility}
+
+For model $m$, metric $i$, normalized metric value $x_{m,i}$, and prompt-adjusted weight $w_i$, the base utility is:
+
+\[
+U_m = \frac{\sum_i w_i \cdot \max(x_{m,i}, \epsilon)}{\sum_i w_i}
+\]
+
+where $\epsilon = 0.08$ prevents missing or tiny metric values from collapsing the calculation.
+
+\subsection{Cobb-Douglas-Inspired Multiplicative Layer}
+
+The system then applies multiplicative factors for category fit and confidence:
+
+\[
+S_m = 100 \cdot U_m \cdot F_m^{\alpha} \cdot (0.65 + 0.35C_m)
+\]
+
+where:
+
+\begin{itemize}[leftmargin=*]
+  \item $F_m$ is category fit, such as exact match, compatible general model, or poor mismatch.
+  \item $\alpha = 1.3$ is the fit exponent.
+  \item $C_m$ is registry confidence.
+  \item $(0.65 + 0.35C_m)$ gives confidence meaningful influence without fully dominating the rank.
+\end{itemize}
+
+The Cobb-Douglas idea appears in the multiplicative structure: a model must be useful, category-compatible, and reasonably trusted. Strong speed or low price cannot fully compensate for severe category mismatch because $F_m^{1.3}$ attenuates the final score.
+
+\subsection{Non-Compensatory Quality Constraint}
+
+If the prompt or LLM intent marks quality as highly important, models below a quality floor of $0.7$ receive a hard penalty:
+
+\[
+S_m = 0.6S_m \quad \text{if quality is flagged and } x_{m,quality} < 0.7
+\]
+
+This prevents cheap or fast models from ranking too highly in high-stakes use cases.
+
+\section{Hard Filters}
+
+Before scoring, the server applies hard filters:
+
+\begin{itemize}[leftmargin=*]
+  \item category compatibility,
+  \item open-source/open-only constraint,
+  \item max input price,
+  \item minimum context length,
+  \item self-host or air-gapped privacy requirements,
+  \item latency requirement mapped to minimum speed score,
+  \item excluded providers,
+  \item excluded models,
+  \item required modalities.
+\end{itemize}
+
+Hard filters are intentionally applied before scoring so that requirements such as self-hosting, context minimum, or provider exclusion are not treated as soft preferences.
+
+\section{Explainability}
+
+The backend returns reasons for each recommendation. Reasons are constructed from:
+
+\begin{itemize}[leftmargin=*]
+  \item exact or compatible category fit,
+  \item known benchmark metadata, such as Arena Elo, HumanEval, or TPS,
+  \item strong metric values, such as affordability, context, privacy, or speed,
+  \item registry source attribution.
+\end{itemize}
+
+Example reasons include:
+
+\begin{lstlisting}[style=code]
+Specialized for code workflows
+Top-tier: Arena Elo 1320
+92% HumanEval pass rate
+Fast: 195 tokens/sec
+Data from OpenRouter
+\end{lstlisting}
+
+\section{Security and Reliability}
+
+Security and reliability measures include:
+
+\begin{itemize}[leftmargin=*]
+  \item CORS restricted by \texttt{CORS\_ORIGINS}, permissive only in development mode.
+  \item Rate limiting: 30 recommendation requests/minute/IP and 2 sync requests/minute/IP.
+  \item Prompt sanitization: HTML tag stripping and 500-character prompt limit.
+  \item Weight validation: each weight must be between 0.05 and 3.0.
+  \item Category validation against known enums.
+  \item Recommendation body size limit of 10KB.
+  \item Request logging with method, path, status, and duration.
+  \item Content Security Policy and other basic security headers for static responses.
+  \item Registry write locking to reduce concurrent file-write issues.
+\end{itemize}
+
+\section{Testing}
+
+The project uses Vitest. The test command is:
+
+\begin{lstlisting}[style=code]
+npm.cmd test
+\end{lstlisting}
+
+Current coverage includes:
+
+\begin{itemize}[leftmargin=*]
+  \item category detection,
+  \item prompt analysis,
+  \item negation handling,
+  \item constraint extraction,
+  \item weighted scoring behavior,
+  \item recommendation ranking basics,
+  \item rate limiter behavior,
+  \item structured filter behavior.
+\end{itemize}
+
+\section{Limitations and Future Work}
+
+\begin{itemize}[leftmargin=*]
+  \item Direct Artificial Analysis API integration is not yet implemented; benchmark data is currently curated internally.
+  \item The Open LLM Leaderboard path is represented through benchmark normalization concepts and source metadata, but not a live leaderboard fetch.
+  \item The registry is still JSON-backed. SQLite would be more robust for concurrent writes, queries, and history.
+  \item HTTP integration tests can be expanded beyond unit-level API behavior tests.
+  \item A pure Cobb-Douglas metric product could be tested experimentally against the current hybrid model, but the current hybrid is easier to interpret and less brittle for sparse metrics.
+\end{itemize}
+
+\section{Conclusion}
+
+Model Compass now has the foundation of a data-driven recommendation engine. The system accepts natural-language and structured requirements, converts them into constraints and weights, filters incompatible models, scores remaining models with explainable normalized metrics, and presents recommendations with cost and comparison tooling. Its architecture keeps the frontend modular, the backend responsible for ranking and data ingestion, and the prompt parser optional so the product remains usable even without external LLM keys.
+
+\end{document}

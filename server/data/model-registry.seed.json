@@ -12,6 +12,7 @@
       "bestFor": "High stakes reasoning, planning, rich conversation, and mixed knowledge work.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": ["OpenRouter catalog", "Chatbot Arena", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.76,
       "pricing": {
@@ -39,6 +40,7 @@
       "bestFor": "Customer support, summarization, research triage, and high volume chat.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": ["OpenRouter catalog", "Artificial Analysis", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.78,
       "pricing": {
@@ -66,6 +68,7 @@
       "bestFor": "Repository edits, debugging, test generation, migrations, and code review.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": ["OpenRouter catalog", "HumanEval", "SWE-bench", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.74,
       "pricing": {
@@ -93,6 +96,7 @@
       "bestFor": "Self-hosted developer tools, internal code search, and private repos.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models",
+      "benchmarkSources": ["Hugging Face model metadata", "Open LLM Leaderboard", "HumanEval"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.7,
       "pricing": {
@@ -120,6 +124,7 @@
       "bestFor": "Product imagery, campaigns, concept art, editing, and style exploration.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=text-to-image",
+      "benchmarkSources": ["Hugging Face model metadata", "Artificial Analysis", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.68,
       "pricing": {
@@ -147,6 +152,7 @@
       "bestFor": "Short cinematic clips, ads, storyboards, product shots, and motion tests.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=image-to-video",
+      "benchmarkSources": ["Hugging Face model metadata", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.58,
       "pricing": {
@@ -174,6 +180,7 @@
       "bestFor": "Voice agents, narration, transcription, dubbing, and conversational audio.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=automatic-speech-recognition",
+      "benchmarkSources": ["Hugging Face model metadata", "Artificial Analysis", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.66,
       "pricing": {
@@ -201,6 +208,7 @@
       "bestFor": "Song sketches, background tracks, sonic branding, and creative ideation.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=text-to-audio",
+      "benchmarkSources": ["Hugging Face model metadata", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.52,
       "pricing": {
@@ -228,6 +236,7 @@
       "bestFor": "Long PDFs, OCR, extraction, compliance checks, and document Q&A.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": ["OpenRouter catalog", "Open LLM Leaderboard", "provider evals"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.7,
       "pricing": {
@@ -255,6 +264,7 @@
       "bestFor": "Private workflows, internal copilots, offline use, and custom fine-tuning.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models",
+      "benchmarkSources": ["Hugging Face model metadata", "Open LLM Leaderboard"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.68,
       "pricing": {
@@ -282,6 +292,7 @@
       "bestFor": "Search, RAG retrieval, semantic clustering, deduplication, and document matching.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=sentence-similarity",
+      "benchmarkSources": ["Hugging Face model metadata", "MTEB"],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.64,
       "pricing": {

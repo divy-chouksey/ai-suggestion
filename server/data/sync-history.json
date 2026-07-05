@@ -1,5 +1,49 @@
 [
   {
+    "timestamp": "2026-07-05T18:23:14.808Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "source": "huggingface",
+        "ok": false,
+        "error": "fetch failed"
+      }
+    ],
+    "added": 0,
+    "updated": 12,
+    "modelCount": 367
+  },
+  {
+    "timestamp": "2026-07-05T17:16:02.799Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 90
+      }
+    ],
+    "added": 6,
+    "updated": 222,
+    "modelCount": 367
+  },
+  {
     "timestamp": "2026-06-26T09:46:03.191Z",
     "sources": [
       "openrouter",

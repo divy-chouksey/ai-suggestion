@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-06-26T09:46:03.183Z",
+  "lastUpdated": "2026-07-05T18:23:14.793Z",
   "metadata": {
     "reason": "source sync",
     "sources": [
@@ -21,6 +21,7 @@
       "bestFor": "AI21: Jamba Large 1.7 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -57,7 +58,8 @@
       "bestFor": "ai4bharat/indic-parler-tts can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/ai4bharat/indic-parler-tts",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.096Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -86,7 +88,8 @@
       "bestFor": "AionLabs: Aion-2.0 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/aion-labs/aion-2.0",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -115,6 +118,7 @@
       "bestFor": "AllenAI: Olmo 3 32B Think is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -147,6 +151,7 @@
       "bestFor": "Amazon: Nova 2 Lite is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -177,6 +182,7 @@
       "bestFor": "Amazon: Nova Premier 1.0 supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -208,7 +214,8 @@
       "bestFor": "Anthropic Claude Haiku Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~anthropic/claude-haiku-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -239,17 +246,18 @@
       "bestFor": "Anthropic Claude Sonnet Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~anthropic/claude-sonnet-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
-        "inputPerMillion": 3,
-        "outputPerMillion": 15
+        "inputPerMillion": 2,
+        "outputPerMillion": 10
       },
       "contextLength": 1000000,
       "metrics": {
         "quality": 0.98,
-        "affordability": 0.5117591117786808,
+        "affordability": 0.5860801334614398,
         "speed": 0.66,
         "context": 1,
         "privacy": 0.42,
@@ -270,7 +278,8 @@
       "bestFor": "Anthropic: Claude Fable 5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-fable-5",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -301,7 +310,8 @@
       "bestFor": "Anthropic: Claude Fable Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~anthropic/claude-fable-latest",
-      "lastVerified": "2026-06-26T09:45:59.885Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -332,6 +342,7 @@
       "bestFor": "Anthropic: Claude Haiku 4.5 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -363,6 +374,7 @@
       "bestFor": "Anthropic: Claude Opus 4 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -394,6 +406,7 @@
       "bestFor": "Anthropic: Claude Opus 4.1 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -425,6 +438,7 @@
       "bestFor": "Anthropic: Claude Opus 4.5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -456,7 +470,8 @@
       "bestFor": "Anthropic: Claude Opus 4.6 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-opus-4.6",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -487,6 +502,7 @@
       "bestFor": "Anthropic: Claude Opus 4.6 (Fast) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-opus-4.6-fast",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:45:59.890Z",
       "confidence": 0.72,
       "pricing": {
@@ -518,7 +534,8 @@
       "bestFor": "Anthropic: Claude Opus 4.7 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-opus-4.7",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -549,7 +566,8 @@
       "bestFor": "Anthropic: Claude Opus 4.7 (Fast) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-opus-4.7-fast",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -580,7 +598,8 @@
       "bestFor": "Anthropic: Claude Opus 4.8 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-opus-4.8",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -611,7 +630,8 @@
       "bestFor": "Anthropic: Claude Opus 4.8 (Fast) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-opus-4.8-fast",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -642,7 +662,8 @@
       "bestFor": "Anthropic: Claude Opus Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~anthropic/claude-opus-latest",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -673,6 +694,7 @@
       "bestFor": "Anthropic: Claude Sonnet 4 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -704,6 +726,7 @@
       "bestFor": "Anthropic: Claude Sonnet 4.5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -735,7 +758,8 @@
       "bestFor": "Anthropic: Claude Sonnet 4.6 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-sonnet-4.6",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -746,6 +770,38 @@
       "metrics": {
         "quality": 0.98,
         "affordability": 0.5117591117786808,
+        "speed": 0.66,
+        "context": 1,
+        "privacy": 0.42,
+        "availability": 0.82
+      }
+    },
+    {
+      "id": "openrouter-anthropic-claude-sonnet-5",
+      "name": "Anthropic: Claude Sonnet 5",
+      "provider": "anthropic",
+      "category": "code",
+      "access": "API",
+      "modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "bestFor": "Anthropic: Claude Sonnet 5 is suited for coding, debugging, refactors, and software agent workflows.",
+      "source": "OpenRouter",
+      "sourceUrl": "https://openrouter.ai/anthropic/claude-sonnet-5",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.767Z",
+      "confidence": 0.72,
+      "pricing": {
+        "unit": "USD per 1M tokens",
+        "inputPerMillion": 2,
+        "outputPerMillion": 10
+      },
+      "contextLength": 1000000,
+      "metrics": {
+        "quality": 0.98,
+        "affordability": 0.5860801334614398,
         "speed": 0.66,
         "context": 1,
         "privacy": 0.42,
@@ -764,7 +820,8 @@
       "bestFor": "Arcee AI: Trinity Large Thinking is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/arcee-ai/trinity-large-thinking",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -793,6 +850,7 @@
       "bestFor": "Arcee AI: Trinity Mini is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -822,6 +880,7 @@
       "bestFor": "Arcee AI: Virtuoso Large is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -857,7 +916,8 @@
       "bestFor": "argmaxinc/whisperkit-coreml can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/argmaxinc/whisperkit-coreml",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -893,6 +953,7 @@
       "bestFor": "BAAI/bge-base-en-v1.5 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/BAAI/bge-base-en-v1.5",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:46:03.154Z",
       "confidence": 0.6,
       "pricing": {
@@ -929,7 +990,8 @@
       "bestFor": "BAAI/bge-large-en-v1.5 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/BAAI/bge-large-en-v1.5",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.769Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -965,7 +1027,8 @@
       "bestFor": "BAAI/bge-m3 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/BAAI/bge-m3",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.768Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1001,7 +1064,8 @@
       "bestFor": "BAAI/bge-small-en-v1.5 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/BAAI/bge-small-en-v1.5",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.768Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1031,6 +1095,7 @@
       "bestFor": "Baidu: ERNIE 4.5 VL 424B A47B supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -1067,7 +1132,8 @@
       "bestFor": "black-forest-labs/FLUX.1-dev can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/black-forest-labs/FLUX.1-dev",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1103,7 +1169,8 @@
       "bestFor": "black-forest-labs/FLUX.2-klein-4B can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1132,6 +1199,7 @@
       "bestFor": "Body Builder (beta) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1168,7 +1236,8 @@
       "bestFor": "bosonai/higgs-tts-2-3b-base can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/bosonai/higgs-tts-2-3b-base",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1204,6 +1273,7 @@
       "bestFor": "bullerwins/Wan2.2-I2V-A14B-GGUF can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:31:50.189Z",
       "confidence": 0.6,
       "pricing": {
@@ -1235,6 +1305,7 @@
       "bestFor": "ByteDance Seed: Seed 1.6 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1266,6 +1337,7 @@
       "bestFor": "ByteDance Seed: Seed 1.6 Flash is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1297,7 +1369,8 @@
       "bestFor": "ByteDance Seed: Seed-2.0-Lite supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/bytedance-seed/seed-2.0-lite",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1328,7 +1401,8 @@
       "bestFor": "ByteDance Seed: Seed-2.0-Mini supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/bytedance-seed/seed-2.0-mini",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1358,6 +1432,7 @@
       "bestFor": "ByteDance: UI-TARS 7B supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -1390,7 +1465,11 @@
       "bestFor": "Top-tier code generation, debugging, test writing, and agentic software engineering tasks. Fast and highly capable.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-3.5-sonnet",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "Anthropic benchmarks",
+        "Artificial Analysis 2025"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.371Z",
       "confidence": 0.96,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1422,7 +1501,11 @@
       "bestFor": "Best-in-class coding, complex reasoning, agentic software workflows, and code review. Excels at large repository understanding and multi-file edits.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/anthropic/claude-3.7-sonnet",
-      "lastVerified": "2026-06-26T09:39:40.736Z",
+      "benchmarkSources": [
+        "Anthropic benchmarks",
+        "Artificial Analysis 2025"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.370Z",
       "confidence": 0.97,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1452,7 +1535,10 @@
       "bestFor": "Meta open-source code specialist. Strong at code generation, infilling, and instruction-following for software development tasks.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/meta-llama/codellama-70b-instruct",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "Meta paper"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.85,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1483,6 +1569,7 @@
       "bestFor": "Repository edits, debugging, test generation, migrations, and code review.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.74,
       "pricing": {
@@ -1514,7 +1601,11 @@
       "bestFor": "Purpose-built coding model by Mistral. Specialized in code completion, generation, and multi-language support. Excellent IDE integration.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/mistralai/codestral-2501",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "Mistral evals",
+        "Mistral API"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.93,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1543,7 +1634,8 @@
       "bestFor": "Cohere: North Mini Code (free) is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/cohere/north-mini-code:free",
-      "lastVerified": "2026-06-26T09:45:59.885Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.768Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1579,7 +1671,8 @@
       "bestFor": "CompVis/stable-diffusion-v1-4 can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/CompVis/stable-diffusion-v1-4",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1611,7 +1704,8 @@
       "bestFor": "coqui/XTTS-v2 can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/coqui/XTTS-v2",
-      "lastVerified": "2026-06-26T09:46:02.604Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1640,6 +1734,7 @@
       "bestFor": "Deep Cogito: Cogito v2.1 671B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1671,7 +1766,11 @@
       "bestFor": "State-of-the-art reasoning model for complex algorithmic problems, competitive programming, mathematical proofs, and hard code generation.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/deepseek/deepseek-r1",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "DeepSeek paper",
+        "DeepSeek API metrics"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.94,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1702,7 +1801,11 @@
       "bestFor": "Outstanding coding and reasoning at extremely low cost. Competitive with GPT-4o on most coding benchmarks, fraction of the price.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/deepseek/deepseek-chat-v3-0324",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "DeepSeek paper",
+        "DeepSeek API metrics"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.94,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1735,10 +1838,11 @@
         "arxiv:2501.12948",
         "license:mit"
       ],
-      "bestFor": "deepseek-ai/DeepSeek-R1 can be evaluated for code workflows, self-hosting, or custom deployment.",
+      "bestFor": "deepseek-ai/DeepSeek-R1 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
-      "lastVerified": "2026-06-26T09:31:49.606Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -1767,6 +1871,7 @@
       "bestFor": "DeepSeek: DeepSeek V3.1 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -1796,6 +1901,7 @@
       "bestFor": "DeepSeek: DeepSeek V3.1 Terminus is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1825,6 +1931,7 @@
       "bestFor": "DeepSeek: DeepSeek V3.2 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1854,6 +1961,7 @@
       "bestFor": "DeepSeek: DeepSeek V3.2 Exp is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -1883,7 +1991,8 @@
       "bestFor": "DeepSeek: DeepSeek V4 Flash is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1912,7 +2021,8 @@
       "bestFor": "DeepSeek: DeepSeek V4 Pro is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -1941,6 +2051,7 @@
       "bestFor": "DeepSeek: R1 0528 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -1972,6 +2083,7 @@
       "bestFor": "Long PDFs, OCR, extraction, compliance checks, and document Q&A.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.7,
       "pricing": {
@@ -2008,7 +2120,8 @@
       "bestFor": "E-MIMIC/inclusively-reformulation-it5 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/E-MIMIC/inclusively-reformulation-it5",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2039,6 +2152,7 @@
       "bestFor": "Search, RAG retrieval, semantic clustering, deduplication, and document matching.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=sentence-similarity",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.64,
       "pricing": {
@@ -2075,7 +2189,8 @@
       "bestFor": "facebook/bart-large-cnn can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/facebook/bart-large-cnn",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2111,7 +2226,8 @@
       "bestFor": "facebook/mms-tts-eng can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/facebook/mms-tts-eng",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2147,7 +2263,8 @@
       "bestFor": "facebook/musicgen-medium can be evaluated for music workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/facebook/musicgen-medium",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2183,7 +2300,8 @@
       "bestFor": "facebook/musicgen-small can be evaluated for music workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/facebook/musicgen-small",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2219,7 +2337,8 @@
       "bestFor": "facebook/nllb-200-distilled-600M can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/facebook/nllb-200-distilled-600M",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2255,7 +2374,8 @@
       "bestFor": "facebook/opt-125m can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/facebook/opt-125m",
-      "lastVerified": "2026-06-26T09:46:00.674Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2285,6 +2405,7 @@
       "bestFor": "Customer support, summarization, research triage, and high volume chat.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.78,
       "pricing": {
@@ -2315,7 +2436,8 @@
       "bestFor": "Free Models Router supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openrouter/free",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2346,6 +2468,7 @@
       "bestFor": "High stakes reasoning, planning, rich conversation, and mixed knowledge work.",
       "source": "Seed registry",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.76,
       "pricing": {
@@ -2378,7 +2501,11 @@
       "bestFor": "Fast and affordable code generation with huge context window. Great for iterative coding, auto-completion, and inline code assistance.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/google/gemini-2.5-flash-preview",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "Google AI evals",
+        "Google AI Studio"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.92,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2410,7 +2537,11 @@
       "bestFor": "Google flagship model with exceptional 1M context. Excellent for large codebase analysis, multi-file generation, and agentic coding tasks.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/google/gemini-2.5-pro-preview",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "Google AI evals",
+        "Google AI Studio"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.95,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2443,7 +2574,8 @@
       "bestFor": "Google Gemini Flash Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~google/gemini-flash-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2476,7 +2608,8 @@
       "bestFor": "Google Gemini Pro Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~google/gemini-pro-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2512,7 +2645,8 @@
       "bestFor": "google-t5/t5-base can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/google-t5/t5-base",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2548,7 +2682,8 @@
       "bestFor": "google-t5/t5-small can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/google-t5/t5-small",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -2581,6 +2716,7 @@
       "bestFor": "Google: Gemini 2.5 Flash is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -2614,6 +2750,7 @@
       "bestFor": "Google: Gemini 2.5 Flash Lite is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -2647,6 +2784,7 @@
       "bestFor": "Google: Gemini 2.5 Flash Lite Preview 09-2025 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -2680,6 +2818,7 @@
       "bestFor": "Google: Gemini 2.5 Pro is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -2713,6 +2852,7 @@
       "bestFor": "Google: Gemini 2.5 Pro Preview 05-06 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -2745,6 +2885,7 @@
       "bestFor": "Google: Gemini 2.5 Pro Preview 06-05 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -2778,6 +2919,7 @@
       "bestFor": "Google: Gemini 3 Flash Preview is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -2811,7 +2953,8 @@
       "bestFor": "Google: Gemini 3.1 Flash Lite is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.1-flash-lite",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2844,7 +2987,8 @@
       "bestFor": "Google: Gemini 3.1 Flash Lite Preview is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.1-flash-lite-preview",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2877,7 +3021,8 @@
       "bestFor": "Google: Gemini 3.1 Pro Preview is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.1-pro-preview",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2910,7 +3055,8 @@
       "bestFor": "Google: Gemini 3.1 Pro Preview Custom Tools is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.1-pro-preview-customtools",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2943,7 +3089,8 @@
       "bestFor": "Google: Gemini 3.5 Flash is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.5-flash",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -2972,6 +3119,7 @@
       "bestFor": "Google: Gemma 3n 4B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -3003,7 +3151,8 @@
       "bestFor": "Google: Gemma 4 26B A4B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3034,7 +3183,8 @@
       "bestFor": "Google: Gemma 4 26B A4B (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemma-4-26b-a4b-it:free",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3065,7 +3215,8 @@
       "bestFor": "Google: Gemma 4 31B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemma-4-31b-it",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3096,7 +3247,8 @@
       "bestFor": "Google: Gemma 4 31B (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemma-4-31b-it:free",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3127,7 +3279,8 @@
       "bestFor": "Google: Lyria 3 Clip Preview is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/lyria-3-clip-preview",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3158,7 +3311,8 @@
       "bestFor": "Google: Lyria 3 Pro Preview is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/lyria-3-pro-preview",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3188,6 +3342,7 @@
       "bestFor": "Google: Nano Banana (Gemini 2.5 Flash Image) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -3218,7 +3373,8 @@
       "bestFor": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.1-flash-image-preview",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3248,7 +3404,8 @@
       "bestFor": "Google: Nano Banana 2 (Gemini 3.1 Flash Image) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3.1-flash-image",
-      "lastVerified": "2026-06-26T09:45:59.884Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.768Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3266,6 +3423,37 @@
       }
     },
     {
+      "id": "openrouter-google-gemini-3-1-flash-lite-image",
+      "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "provider": "google",
+      "category": "image",
+      "access": "API",
+      "modalities": [
+        "image",
+        "text"
+      ],
+      "bestFor": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) supports visual tasks such as image understanding or generation depending on provider support.",
+      "source": "OpenRouter",
+      "sourceUrl": "https://openrouter.ai/google/gemini-3.1-flash-lite-image",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.768Z",
+      "confidence": 0.72,
+      "pricing": {
+        "unit": "USD per 1M tokens",
+        "inputPerMillion": 0.25,
+        "outputPerMillion": 1.5
+      },
+      "contextLength": 65536,
+      "metrics": {
+        "quality": 0.6763295986124741,
+        "affordability": 0.8632182327722153,
+        "speed": 0.8600000000000001,
+        "context": 0.8027466551039498,
+        "privacy": 0.42,
+        "availability": 0.82
+      }
+    },
+    {
       "id": "openrouter-google-gemini-3-pro-image-preview",
       "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
       "provider": "google",
@@ -3278,6 +3466,7 @@
       "bestFor": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview) supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -3308,7 +3497,8 @@
       "bestFor": "Google: Nano Banana Pro (Gemini 3 Pro Image) supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/google/gemini-3-pro-image",
-      "lastVerified": "2026-06-26T09:45:59.884Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.768Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3344,7 +3534,8 @@
       "bestFor": "google/flan-t5-base can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/google/flan-t5-base",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3376,7 +3567,11 @@
       "bestFor": "Excellent all-around coding model. Strong at writing, reviewing, and explaining code across all major languages with multimodal input.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/openai/gpt-4o",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "OpenAI evals 2024",
+        "Artificial Analysis 2025"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.95,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3408,7 +3603,11 @@
       "bestFor": "Cost-efficient OpenAI coding model. Best choice for high-volume code generation, pair programming, and lighter coding tasks.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/openai/gpt-4o-mini",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "OpenAI evals 2024",
+        "Artificial Analysis 2025"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.9,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3444,7 +3643,45 @@
       "bestFor": "Helsinki-NLP/opus-mt-en-de can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Helsinki-NLP/opus-mt-en-de",
-      "lastVerified": "2026-06-26T09:46:00.982Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
+      "confidence": 0.6,
+      "pricing": {
+        "unit": "infrastructure",
+        "inputPerMillion": 0,
+        "outputPerMillion": 0
+      },
+      "contextLength": 0,
+      "metrics": {
+        "quality": 1,
+        "affordability": 0.9,
+        "speed": 0.58,
+        "context": 0.48,
+        "privacy": 0.92,
+        "availability": 1
+      }
+    },
+    {
+      "id": "hf-helsinki-nlp-opus-mt-fr-en",
+      "name": "Helsinki-NLP/opus-mt-fr-en",
+      "provider": "Helsinki-NLP",
+      "category": "general",
+      "access": "Open source",
+      "modalities": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "safetensors",
+        "marian",
+        "text2text-generation",
+        "translation"
+      ],
+      "bestFor": "Helsinki-NLP/opus-mt-fr-en can be evaluated for general workflows, self-hosting, or custom deployment.",
+      "source": "Hugging Face",
+      "sourceUrl": "https://huggingface.co/Helsinki-NLP/opus-mt-fr-en",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3480,7 +3717,8 @@
       "bestFor": "Helsinki-NLP/opus-mt-nl-en can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Helsinki-NLP/opus-mt-nl-en",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3516,7 +3754,8 @@
       "bestFor": "hexgrad/Kokoro-82M can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
-      "lastVerified": "2026-06-26T09:46:02.604Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3545,6 +3784,7 @@
       "bestFor": "IBM: Granite 4.0 Micro is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -3574,7 +3814,8 @@
       "bestFor": "IBM: Granite 4.1 8B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/ibm-granite/granite-4.1-8b",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3604,6 +3845,7 @@
       "bestFor": "Product imagery, campaigns, concept art, editing, and style exploration.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=text-to-image",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.68,
       "pricing": {
@@ -3633,7 +3875,8 @@
       "bestFor": "Inception: Mercury 2 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/inception/mercury-2",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3662,7 +3905,8 @@
       "bestFor": "inclusionAI: Ling-2.6-1T is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/inclusionai/ling-2.6-1t",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3691,7 +3935,8 @@
       "bestFor": "inclusionAI: Ling-2.6-flash is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/inclusionai/ling-2.6-flash",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3720,7 +3965,8 @@
       "bestFor": "inclusionAI: Ring-2.6-1T is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/inclusionai/ring-2.6-1t",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -3756,7 +4002,8 @@
       "bestFor": "indonesian-nlp/wav2vec2-indonesian-javanese-sundanese can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/indonesian-nlp/wav2vec2-indonesian-javanese-sundanese",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3792,6 +4039,7 @@
       "bestFor": "intfloat/multilingual-e5-base can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/intfloat/multilingual-e5-base",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:31:51.475Z",
       "confidence": 0.6,
       "pricing": {
@@ -3828,7 +4076,8 @@
       "bestFor": "intfloat/multilingual-e5-large can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/intfloat/multilingual-e5-large",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.769Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3864,7 +4113,8 @@
       "bestFor": "intfloat/multilingual-e5-small can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/intfloat/multilingual-e5-small",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.769Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3900,7 +4150,8 @@
       "bestFor": "jonatasgrosman/wav2vec2-large-xlsr-53-arabic can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3936,7 +4187,8 @@
       "bestFor": "jonatasgrosman/wav2vec2-large-xlsr-53-dutch can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-dutch",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -3972,7 +4224,8 @@
       "bestFor": "jonatasgrosman/wav2vec2-large-xlsr-53-greek can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-greek",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4008,7 +4261,8 @@
       "bestFor": "jonatasgrosman/wav2vec2-large-xlsr-53-japanese can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-japanese",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4044,7 +4298,8 @@
       "bestFor": "jonatasgrosman/wav2vec2-large-xlsr-53-polish can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-polish",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4080,7 +4335,8 @@
       "bestFor": "k2-fsa/OmniVoice can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/k2-fsa/OmniVoice",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4116,6 +4372,7 @@
       "bestFor": "KomeijiForce/bart-large-emojilm can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/KomeijiForce/bart-large-emojilm",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:46:00.981Z",
       "confidence": 0.6,
       "pricing": {
@@ -4145,7 +4402,8 @@
       "bestFor": "Kwaipilot: KAT-Coder-Pro V2 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/kwaipilot/kat-coder-pro-v2",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4181,7 +4439,8 @@
       "bestFor": "Lightricks/LTX-2 can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Lightricks/LTX-2",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4217,7 +4476,8 @@
       "bestFor": "Lightricks/LTX-2.3 can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Lightricks/LTX-2.3",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4253,7 +4513,8 @@
       "bestFor": "Lightricks/LTX-2.3-fp8 can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Lightricks/LTX-2.3-fp8",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4289,7 +4550,8 @@
       "bestFor": "Lightricks/LTX-Video can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Lightricks/LTX-Video",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4325,7 +4587,8 @@
       "bestFor": "lightx2v/Qwen-Image-Lightning can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/lightx2v/Qwen-Image-Lightning",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4361,7 +4624,8 @@
       "bestFor": "lightx2v/Wan2.2-Distill-Loras can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/lightx2v/Wan2.2-Distill-Loras",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4390,7 +4654,8 @@
       "bestFor": "LiquidAI: LFM2-24B-A2B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/liquid/lfm-2-24b-a2b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4419,7 +4684,8 @@
       "bestFor": "LiquidAI: LFM2.5-1.2B-Instruct (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct:free",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4448,7 +4714,8 @@
       "bestFor": "LiquidAI: LFM2.5-1.2B-Thinking (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/liquid/lfm-2.5-1.2b-thinking:free",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4484,7 +4751,8 @@
       "bestFor": "Lykon/dreamshaper-7 can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Lykon/dreamshaper-7",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4520,6 +4788,7 @@
       "bestFor": "MahmoudAshraf/mms-300m-1130-forced-aligner can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/MahmoudAshraf/mms-300m-1130-forced-aligner",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:46:02.312Z",
       "confidence": 0.6,
       "pricing": {
@@ -4556,7 +4825,8 @@
       "bestFor": "meta-llama/Llama-3.1-8B-Instruct can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
-      "lastVerified": "2026-06-26T09:46:00.675Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4592,7 +4862,8 @@
       "bestFor": "meta-llama/Llama-3.2-1B-Instruct can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
-      "lastVerified": "2026-06-26T09:46:00.675Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4621,6 +4892,7 @@
       "bestFor": "Microsoft: Phi 4 Mini Instruct is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -4657,6 +4929,7 @@
       "bestFor": "microsoft/speecht5_tts can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/microsoft/speecht5_tts",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:31:51.174Z",
       "confidence": 0.6,
       "pricing": {
@@ -4693,7 +4966,8 @@
       "bestFor": "microsoft/tapex-base-finetuned-wikisql can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/microsoft/tapex-base-finetuned-wikisql",
-      "lastVerified": "2026-06-26T09:46:00.982Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4729,7 +5003,8 @@
       "bestFor": "microsoft/VibeVoice-Realtime-0.5B can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/microsoft/VibeVoice-Realtime-0.5B",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.096Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -4758,6 +5033,7 @@
       "bestFor": "MiniMax: MiniMax M1 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -4787,6 +5063,7 @@
       "bestFor": "MiniMax: MiniMax M2 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -4816,7 +5093,8 @@
       "bestFor": "MiniMax: MiniMax M2-her is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/minimax/minimax-m2-her",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4845,6 +5123,7 @@
       "bestFor": "MiniMax: MiniMax M2.1 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -4874,7 +5153,8 @@
       "bestFor": "MiniMax: MiniMax M2.5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/minimax/minimax-m2.5",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4903,7 +5183,8 @@
       "bestFor": "MiniMax: MiniMax M2.7 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/minimax/minimax-m2.7",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4934,7 +5215,8 @@
       "bestFor": "MiniMax: MiniMax M3 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/minimax/minimax-m3",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -4964,6 +5246,7 @@
       "bestFor": "Mistral: Codestral 2508 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -4994,6 +5277,7 @@
       "bestFor": "Mistral: Devstral 2 2512 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5024,6 +5308,7 @@
       "bestFor": "Mistral: Ministral 3 14B 2512 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5054,6 +5339,7 @@
       "bestFor": "Mistral: Ministral 3 3B 2512 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5084,6 +5370,7 @@
       "bestFor": "Mistral: Ministral 3 8B 2512 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5115,6 +5402,7 @@
       "bestFor": "Mistral: Mistral Large 3 2512 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5146,6 +5434,7 @@
       "bestFor": "Mistral: Mistral Medium 3 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5177,6 +5466,7 @@
       "bestFor": "Mistral: Mistral Medium 3.1 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5208,7 +5498,8 @@
       "bestFor": "Mistral: Mistral Medium 3.5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/mistralai/mistral-medium-3-5",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5238,6 +5529,7 @@
       "bestFor": "Mistral: Mistral Small 3.2 24B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5268,7 +5560,8 @@
       "bestFor": "Mistral: Mistral Small 4 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/mistralai/mistral-small-2603",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5299,6 +5592,7 @@
       "bestFor": "Mistral: Voxtral Small 24B 2507 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5329,7 +5623,8 @@
       "bestFor": "MoonshotAI Kimi Latest supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~moonshotai/kimi-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5358,6 +5653,7 @@
       "bestFor": "MoonshotAI: Kimi K2 0711 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5387,6 +5683,7 @@
       "bestFor": "MoonshotAI: Kimi K2 0905 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5416,6 +5713,7 @@
       "bestFor": "MoonshotAI: Kimi K2 Thinking is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5446,7 +5744,8 @@
       "bestFor": "MoonshotAI: Kimi K2.5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/moonshotai/kimi-k2.5",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5476,7 +5775,8 @@
       "bestFor": "MoonshotAI: Kimi K2.6 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/moonshotai/kimi-k2.6",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5506,7 +5806,8 @@
       "bestFor": "MoonshotAI: Kimi K2.7 Code is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
-      "lastVerified": "2026-06-26T09:45:59.885Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5535,6 +5836,7 @@
       "bestFor": "Morph: Morph V3 Fast is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5564,6 +5866,7 @@
       "bestFor": "Morph: Morph V3 Large is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5594,6 +5897,7 @@
       "bestFor": "Song sketches, background tracks, sonic branding, and creative ideation.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=text-to-audio",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.52,
       "pricing": {
@@ -5624,7 +5928,8 @@
       "bestFor": "Nex AGI: Nex-N2-Pro supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nex-agi/nex-n2-pro",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5660,7 +5965,8 @@
       "bestFor": "nomic-ai/nomic-embed-text-v1.5 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.768Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -5689,6 +5995,7 @@
       "bestFor": "Nous: Hermes 4 405B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5718,6 +6025,7 @@
       "bestFor": "Nous: Hermes 4 70B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -5747,6 +6055,7 @@
       "bestFor": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5776,6 +6085,7 @@
       "bestFor": "NVIDIA: Nemotron 3 Nano 30B A3B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5805,6 +6115,7 @@
       "bestFor": "NVIDIA: Nemotron 3 Nano 30B A3B (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -5837,7 +6148,8 @@
       "bestFor": "NVIDIA: Nemotron 3 Nano Omni (free) supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5866,17 +6178,18 @@
       "bestFor": "NVIDIA: Nemotron 3 Super is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
-        "inputPerMillion": 0.08499999999999999,
-        "outputPerMillion": 0.39999999999999997
+        "inputPerMillion": 0.08,
+        "outputPerMillion": 0.44999999999999996
       },
       "contextLength": 1000000,
       "metrics": {
         "quality": 0.78,
-        "affordability": 0.9524919337765824,
+        "affordability": 0.9483829176154942,
         "speed": 0.66,
         "context": 1,
         "privacy": 0.42,
@@ -5895,7 +6208,8 @@
       "bestFor": "NVIDIA: Nemotron 3 Super (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5924,7 +6238,8 @@
       "bestFor": "NVIDIA: Nemotron 3 Ultra is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5953,7 +6268,8 @@
       "bestFor": "NVIDIA: Nemotron 3 Ultra (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -5983,7 +6299,8 @@
       "bestFor": "NVIDIA: Nemotron 3.5 Content Safety (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/nvidia/nemotron-3.5-content-safety:free",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6014,6 +6331,7 @@
       "bestFor": "NVIDIA: Nemotron Nano 12B 2 VL (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6043,6 +6361,7 @@
       "bestFor": "NVIDIA: Nemotron Nano 9B V2 (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6073,6 +6392,7 @@
       "bestFor": "Self-hosted developer tools, internal code search, and private repos.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.7,
       "pricing": {
@@ -6104,7 +6424,8 @@
       "bestFor": "OpenAI GPT Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~openai/gpt-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6135,7 +6456,8 @@
       "bestFor": "OpenAI GPT Mini Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/~openai/gpt-mini-latest",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6171,7 +6493,8 @@
       "bestFor": "openai-community/gpt2 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/openai-community/gpt2",
-      "lastVerified": "2026-06-26T09:46:00.674Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -6201,7 +6524,8 @@
       "bestFor": "OpenAI: GPT Audio is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-audio",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6231,6 +6555,7 @@
       "bestFor": "OpenAI: GPT Audio Mini is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-audio-mini",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:45:59.892Z",
       "confidence": 0.72,
       "pricing": {
@@ -6262,7 +6587,8 @@
       "bestFor": "OpenAI: GPT Chat Latest is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-chat-latest",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6293,6 +6619,7 @@
       "bestFor": "OpenAI: GPT-5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -6324,6 +6651,7 @@
       "bestFor": "OpenAI: GPT-5 Chat is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -6354,6 +6682,7 @@
       "bestFor": "OpenAI: GPT-5 Codex is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6385,6 +6714,7 @@
       "bestFor": "OpenAI: GPT-5 Image is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6416,6 +6746,7 @@
       "bestFor": "OpenAI: GPT-5 Image Mini is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6447,6 +6778,7 @@
       "bestFor": "OpenAI: GPT-5 Mini is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -6478,6 +6810,7 @@
       "bestFor": "OpenAI: GPT-5 Nano is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -6509,6 +6842,7 @@
       "bestFor": "OpenAI: GPT-5 Pro is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6540,6 +6874,7 @@
       "bestFor": "OpenAI: GPT-5.1 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6571,6 +6906,7 @@
       "bestFor": "OpenAI: GPT-5.1 Chat is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6601,6 +6937,7 @@
       "bestFor": "OpenAI: GPT-5.1-Codex is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6631,6 +6968,7 @@
       "bestFor": "OpenAI: GPT-5.1-Codex-Max is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6661,6 +6999,7 @@
       "bestFor": "OpenAI: GPT-5.1-Codex-Mini is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6692,6 +7031,7 @@
       "bestFor": "OpenAI: GPT-5.2 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6723,6 +7063,7 @@
       "bestFor": "OpenAI: GPT-5.2 Chat is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6754,6 +7095,7 @@
       "bestFor": "OpenAI: GPT-5.2 Pro is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6784,6 +7126,7 @@
       "bestFor": "OpenAI: GPT-5.2-Codex is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -6815,7 +7158,8 @@
       "bestFor": "OpenAI: GPT-5.3 Chat is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.3-chat",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6846,7 +7190,8 @@
       "bestFor": "OpenAI: GPT-5.3-Codex is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.3-codex",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6877,7 +7222,8 @@
       "bestFor": "OpenAI: GPT-5.4 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.4",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6908,7 +7254,8 @@
       "bestFor": "OpenAI: GPT-5.4 Image 2 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.4-image-2",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6939,7 +7286,8 @@
       "bestFor": "OpenAI: GPT-5.4 Mini is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.4-mini",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -6970,7 +7318,8 @@
       "bestFor": "OpenAI: GPT-5.4 Nano is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.4-nano",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7001,7 +7350,8 @@
       "bestFor": "OpenAI: GPT-5.4 Pro is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.4-pro",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7032,7 +7382,8 @@
       "bestFor": "OpenAI: GPT-5.5 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.5",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7063,7 +7414,8 @@
       "bestFor": "OpenAI: GPT-5.5 Pro is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openai/gpt-5.5-pro",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7092,6 +7444,7 @@
       "bestFor": "OpenAI: gpt-oss-120b is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -7121,6 +7474,7 @@
       "bestFor": "OpenAI: gpt-oss-120b (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -7150,6 +7504,7 @@
       "bestFor": "OpenAI: gpt-oss-20b is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -7179,6 +7534,7 @@
       "bestFor": "OpenAI: gpt-oss-20b (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -7208,6 +7564,7 @@
       "bestFor": "OpenAI: gpt-oss-safeguard-20b is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -7239,6 +7596,7 @@
       "bestFor": "OpenAI: o3 Deep Research supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -7270,6 +7628,7 @@
       "bestFor": "OpenAI: o3 Pro supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -7301,6 +7660,7 @@
       "bestFor": "OpenAI: o4 Mini Deep Research supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -7337,7 +7697,8 @@
       "bestFor": "openai/whisper-base can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/openai/whisper-base",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7373,7 +7734,8 @@
       "bestFor": "openai/whisper-large-v3 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/openai/whisper-large-v3",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7409,7 +7771,8 @@
       "bestFor": "openai/whisper-large-v3-turbo can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/openai/whisper-large-v3-turbo",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7445,7 +7808,8 @@
       "bestFor": "openbmb/VoxCPM2 can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/openbmb/VoxCPM2",
-      "lastVerified": "2026-06-26T09:31:50.829Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.096Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7481,7 +7845,8 @@
       "bestFor": "OpenMOSS-Team/MOSS-TTS can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/OpenMOSS-Team/MOSS-TTS",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7517,7 +7882,8 @@
       "bestFor": "OpenMOSS-Team/MOVA-360p can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/OpenMOSS-Team/MOVA-360p",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7546,7 +7912,8 @@
       "bestFor": "OpenRouter: Fusion is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openrouter/fusion",
-      "lastVerified": "2026-06-26T09:45:59.885Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7575,6 +7942,7 @@
       "bestFor": "Owl Alpha is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openrouter/owl-alpha",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:45:59.887Z",
       "confidence": 0.72,
       "pricing": {
@@ -7604,7 +7972,8 @@
       "bestFor": "Pareto Code Router is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/openrouter/pareto-code",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7635,7 +8004,8 @@
       "bestFor": "Perceptron: Perceptron Mk1 supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/perceptron/perceptron-mk1",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7665,6 +8035,7 @@
       "bestFor": "Perplexity: Sonar Pro Search supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -7701,7 +8072,8 @@
       "bestFor": "playgroundai/playground-v2.5-1024px-aesthetic can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic",
-      "lastVerified": "2026-06-26T09:31:49.896Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7730,7 +8102,8 @@
       "bestFor": "Poolside: Laguna M.1 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/poolside/laguna-m.1",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7759,7 +8132,68 @@
       "bestFor": "Poolside: Laguna M.1 (free) is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/poolside/laguna-m.1:free",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
+      "confidence": 0.72,
+      "pricing": {
+        "unit": "USD per 1M tokens",
+        "inputPerMillion": 0,
+        "outputPerMillion": 0
+      },
+      "contextLength": 262144,
+      "metrics": {
+        "quality": 0.7383707984390332,
+        "affordability": 0.9,
+        "speed": 0.66,
+        "context": 0.9030899869919436,
+        "privacy": 0.42,
+        "availability": 0.82
+      }
+    },
+    {
+      "id": "openrouter-poolside-laguna-xs-2-1",
+      "name": "Poolside: Laguna XS 2.1",
+      "provider": "poolside",
+      "category": "code",
+      "access": "API",
+      "modalities": [
+        "text"
+      ],
+      "bestFor": "Poolside: Laguna XS 2.1 is suited for coding, debugging, refactors, and software agent workflows.",
+      "source": "OpenRouter",
+      "sourceUrl": "https://openrouter.ai/poolside/laguna-xs-2.1",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.767Z",
+      "confidence": 0.72,
+      "pricing": {
+        "unit": "USD per 1M tokens",
+        "inputPerMillion": 0.06,
+        "outputPerMillion": 0.12
+      },
+      "contextLength": 262144,
+      "metrics": {
+        "quality": 0.7683707984390332,
+        "affordability": 0.9816094466906177,
+        "speed": 0.66,
+        "context": 0.9030899869919436,
+        "privacy": 0.42,
+        "availability": 0.82
+      }
+    },
+    {
+      "id": "openrouter-poolside-laguna-xs-2-1-free",
+      "name": "Poolside: Laguna XS 2.1 (free)",
+      "provider": "poolside",
+      "category": "code",
+      "access": "API",
+      "modalities": [
+        "text"
+      ],
+      "bestFor": "Poolside: Laguna XS 2.1 (free) is suited for coding, debugging, refactors, and software agent workflows.",
+      "source": "OpenRouter",
+      "sourceUrl": "https://openrouter.ai/poolside/laguna-xs-2.1:free",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.766Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7788,7 +8222,8 @@
       "bestFor": "Poolside: Laguna XS.2 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/poolside/laguna-xs.2",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7817,7 +8252,8 @@
       "bestFor": "Poolside: Laguna XS.2 (free) is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/poolside/laguna-xs.2:free",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -7853,7 +8289,8 @@
       "bestFor": "prithivida/parrot_paraphraser_on_T5 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/prithivida/parrot_paraphraser_on_T5",
-      "lastVerified": "2026-06-26T09:46:00.981Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7882,6 +8319,7 @@
       "bestFor": "Private workflows, internal copilots, offline use, and custom fine-tuning.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.68,
       "pricing": {
@@ -7918,7 +8356,45 @@
       "bestFor": "pyannote/speaker-diarization-3.1 can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/pyannote/speaker-diarization-3.1",
-      "lastVerified": "2026-06-26T09:46:02.312Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
+      "confidence": 0.6,
+      "pricing": {
+        "unit": "infrastructure",
+        "inputPerMillion": 0,
+        "outputPerMillion": 0
+      },
+      "contextLength": 0,
+      "metrics": {
+        "quality": 1,
+        "affordability": 0.9,
+        "speed": 0.58,
+        "context": 0.48,
+        "privacy": 0.92,
+        "availability": 1
+      }
+    },
+    {
+      "id": "hf-pyannote-speaker-diarization-community-1",
+      "name": "pyannote/speaker-diarization-community-1",
+      "provider": "pyannote",
+      "category": "voice",
+      "access": "Open source",
+      "modalities": [
+        "pyannote-audio",
+        "pyannote",
+        "pyannote-audio-pipeline",
+        "audio",
+        "voice",
+        "speech",
+        "speaker",
+        "speaker-diarization"
+      ],
+      "bestFor": "pyannote/speaker-diarization-community-1 can be evaluated for voice workflows, self-hosting, or custom deployment.",
+      "source": "Hugging Face",
+      "sourceUrl": "https://huggingface.co/pyannote/speaker-diarization-community-1",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.696Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -7954,6 +8430,7 @@
       "bestFor": "pyannote/voice-activity-detection can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/pyannote/voice-activity-detection",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:31:50.510Z",
       "confidence": 0.6,
       "pricing": {
@@ -7990,7 +8467,8 @@
       "bestFor": "QuantStack/Wan2.2-I2V-A14B-GGUF can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/QuantStack/Wan2.2-I2V-A14B-GGUF",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -8019,6 +8497,7 @@
       "bestFor": "Qwen: Qwen Plus 0728 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8048,6 +8527,7 @@
       "bestFor": "Qwen: Qwen Plus 0728 (thinking) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8077,6 +8557,7 @@
       "bestFor": "Qwen: Qwen3 235B A22B Instruct 2507 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8106,6 +8587,7 @@
       "bestFor": "Qwen: Qwen3 235B A22B Thinking 2507 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8135,6 +8617,7 @@
       "bestFor": "Qwen: Qwen3 30B A3B Instruct 2507 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8164,6 +8647,7 @@
       "bestFor": "Qwen: Qwen3 30B A3B Thinking 2507 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8193,6 +8677,7 @@
       "bestFor": "Qwen: Qwen3 Coder 30B A3B Instruct is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8222,6 +8707,7 @@
       "bestFor": "Qwen: Qwen3 Coder 480B A35B is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8251,6 +8737,7 @@
       "bestFor": "Qwen: Qwen3 Coder 480B A35B (free) is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -8280,6 +8767,7 @@
       "bestFor": "Qwen: Qwen3 Coder Flash is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8309,7 +8797,8 @@
       "bestFor": "Qwen: Qwen3 Coder Next is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3-coder-next",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8338,6 +8827,7 @@
       "bestFor": "Qwen: Qwen3 Coder Plus is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8367,6 +8857,7 @@
       "bestFor": "Qwen: Qwen3 Max is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8396,7 +8887,8 @@
       "bestFor": "Qwen: Qwen3 Max Thinking is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3-max-thinking",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8425,6 +8917,7 @@
       "bestFor": "Qwen: Qwen3 Next 80B A3B Instruct is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8454,6 +8947,7 @@
       "bestFor": "Qwen: Qwen3 Next 80B A3B Instruct (free) is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8483,6 +8977,7 @@
       "bestFor": "Qwen: Qwen3 Next 80B A3B Thinking is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8513,6 +9008,7 @@
       "bestFor": "Qwen: Qwen3 VL 235B A22B Instruct is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8543,6 +9039,7 @@
       "bestFor": "Qwen: Qwen3 VL 235B A22B Thinking is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8573,6 +9070,7 @@
       "bestFor": "Qwen: Qwen3 VL 30B A3B Instruct is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8603,6 +9101,7 @@
       "bestFor": "Qwen: Qwen3 VL 30B A3B Thinking is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8633,6 +9132,7 @@
       "bestFor": "Qwen: Qwen3 VL 32B Instruct is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8663,6 +9163,7 @@
       "bestFor": "Qwen: Qwen3 VL 8B Instruct is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8693,6 +9194,7 @@
       "bestFor": "Qwen: Qwen3 VL 8B Thinking is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -8724,7 +9226,8 @@
       "bestFor": "Qwen: Qwen3.5 397B A17B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8755,7 +9258,8 @@
       "bestFor": "Qwen: Qwen3.5 Plus 2026-02-15 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-plus-02-15",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8786,7 +9290,8 @@
       "bestFor": "Qwen: Qwen3.5 Plus 2026-04-20 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-plus-20260420",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8817,7 +9322,8 @@
       "bestFor": "Qwen: Qwen3.5-122B-A10B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-122b-a10b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8848,7 +9354,8 @@
       "bestFor": "Qwen: Qwen3.5-27B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-27b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8879,7 +9386,8 @@
       "bestFor": "Qwen: Qwen3.5-35B-A3B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8910,7 +9418,8 @@
       "bestFor": "Qwen: Qwen3.5-9B is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-9b",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8941,7 +9450,8 @@
       "bestFor": "Qwen: Qwen3.5-Flash is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.5-flash-02-23",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -8972,17 +9482,18 @@
       "bestFor": "Qwen: Qwen3.6 27B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.6-27b",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
-        "inputPerMillion": 0.28850000000000003,
-        "outputPerMillion": 3.17
+        "inputPerMillion": 0.28500000000000003,
+        "outputPerMillion": 2.4
       },
       "contextLength": 262144,
       "metrics": {
         "quality": 0.7683707984390332,
-        "affordability": 0.7817215468816847,
+        "affordability": 0.814830588962799,
         "speed": 0.8600000000000001,
         "context": 0.9030899869919436,
         "privacy": 0.42,
@@ -9003,7 +9514,8 @@
       "bestFor": "Qwen: Qwen3.6 35B A3B is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.6-35b-a3b",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9034,7 +9546,8 @@
       "bestFor": "Qwen: Qwen3.6 Flash is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.6-flash",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9063,7 +9576,8 @@
       "bestFor": "Qwen: Qwen3.6 Max Preview is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.6-max-preview",
-      "lastVerified": "2026-06-26T09:45:59.888Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9094,7 +9608,8 @@
       "bestFor": "Qwen: Qwen3.6 Plus is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.6-plus",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9123,7 +9638,8 @@
       "bestFor": "Qwen: Qwen3.7 Max is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.7-max",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9153,7 +9669,8 @@
       "bestFor": "Qwen: Qwen3.7 Plus is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/qwen/qwen3.7-plus",
-      "lastVerified": "2026-06-26T09:45:59.886Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9189,7 +9706,8 @@
       "bestFor": "Qwen/Qwen2.5-1.5B-Instruct can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
-      "lastVerified": "2026-06-26T09:46:00.675Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9225,6 +9743,7 @@
       "bestFor": "Qwen/Qwen2.5-3B-Instruct can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:46:00.675Z",
       "confidence": 0.6,
       "pricing": {
@@ -9261,7 +9780,8 @@
       "bestFor": "Qwen/Qwen2.5-7B-Instruct can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
-      "lastVerified": "2026-06-26T09:46:00.674Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9297,7 +9817,8 @@
       "bestFor": "Qwen/Qwen2.5-Omni-7B-AWQ can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen2.5-Omni-7B-AWQ",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9333,7 +9854,8 @@
       "bestFor": "Qwen/Qwen3-0.6B can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-0.6B",
-      "lastVerified": "2026-06-26T09:46:00.674Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9369,7 +9891,8 @@
       "bestFor": "Qwen/Qwen3-4B can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-4B",
-      "lastVerified": "2026-06-26T09:46:00.674Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9405,7 +9928,8 @@
       "bestFor": "Qwen/Qwen3-8B can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-8B",
-      "lastVerified": "2026-06-26T09:46:00.674Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9441,7 +9965,8 @@
       "bestFor": "Qwen/Qwen3-Embedding-0.6B can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.769Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9477,7 +10002,8 @@
       "bestFor": "Qwen/Qwen3-Omni-30B-A3B-Instruct can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9513,7 +10039,8 @@
       "bestFor": "Qwen/Qwen3-Omni-30B-A3B-Thinking can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Thinking",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9549,6 +10076,7 @@
       "bestFor": "Qwen/Qwen3-TTS-12Hz-0.6B-Base can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:46:02.605Z",
       "confidence": 0.6,
       "pricing": {
@@ -9585,7 +10113,8 @@
       "bestFor": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9619,7 +10148,8 @@
       "bestFor": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9655,7 +10185,8 @@
       "bestFor": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.096Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9686,7 +10217,8 @@
       "bestFor": "Strong open-weight coding model from Alibaba. Competitive on HumanEval and SWE-bench. Excellent for code generation, completion, and debugging.",
       "source": "Curated",
       "sourceUrl": "https://openrouter.ai/qwen/qwen-2.5-coder-32b-instruct",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.9,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9717,6 +10249,7 @@
       "bestFor": "Voice agents, narration, transcription, dubbing, and conversational audio.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=automatic-speech-recognition",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.66,
       "pricing": {
@@ -9748,7 +10281,8 @@
       "bestFor": "Reka Edge supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/rekaai/reka-edge",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9777,6 +10311,7 @@
       "bestFor": "Relace: Relace Apply 3 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -9806,6 +10341,7 @@
       "bestFor": "Relace: Relace Search is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -9842,7 +10378,8 @@
       "bestFor": "ResembleAI/chatterbox can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/ResembleAI/chatterbox",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.095Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9872,7 +10409,8 @@
       "bestFor": "Sakana: Fugu Ultra supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/sakana/fugu-ultra",
-      "lastVerified": "2026-06-26T09:45:59.882Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.768Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -9908,7 +10446,8 @@
       "bestFor": "sentence-transformers/all-MiniLM-L6-v2 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.768Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9944,7 +10483,8 @@
       "bestFor": "sentence-transformers/all-mpnet-base-v2 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/sentence-transformers/all-mpnet-base-v2",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.768Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -9980,7 +10520,8 @@
       "bestFor": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-      "lastVerified": "2026-06-26T09:46:03.154Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.768Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10001,7 +10542,7 @@
       "id": "hf-sentence-transformers-paraphrase-multilingual-mpnet-base-v2",
       "name": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
       "provider": "sentence-transformers",
-      "category": "general",
+      "category": "document",
       "access": "Open source",
       "modalities": [
         "sentence-transformers",
@@ -10016,7 +10557,8 @@
       "bestFor": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2 can be evaluated for document workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
-      "lastVerified": "2026-06-26T09:31:51.475Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.769Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10052,7 +10594,8 @@
       "bestFor": "sesame/csm-1b can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/sesame/csm-1b",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10088,7 +10631,8 @@
       "bestFor": "sshleifer/distilbart-cnn-12-6 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/sshleifer/distilbart-cnn-12-6",
-      "lastVerified": "2026-06-26T09:46:00.982Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.693Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10121,7 +10665,8 @@
       "bestFor": "stabilityai/sd-turbo can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/stabilityai/sd-turbo",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10156,7 +10701,8 @@
       "bestFor": "stabilityai/sdxl-turbo can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/stabilityai/sdxl-turbo",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10192,7 +10738,8 @@
       "bestFor": "stabilityai/stable-diffusion-3.5-medium can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/stabilityai/stable-diffusion-3.5-medium",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10228,7 +10775,8 @@
       "bestFor": "stabilityai/stable-diffusion-xl-base-1.0 can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10262,7 +10810,8 @@
       "bestFor": "stabilityai/stable-video-diffusion-img2vid-xt can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10298,7 +10847,8 @@
       "bestFor": "stable-diffusion-v1-5/stable-diffusion-v1-5 can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5",
-      "lastVerified": "2026-06-26T09:46:01.273Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10328,7 +10878,10 @@
       "bestFor": "Open-source code generation model trained on 600+ programming languages. Self-hostable, private, and strong at code completion and synthesis.",
       "source": "Curated",
       "sourceUrl": "https://huggingface.co/bigcode/starcoder2-15b",
-      "lastVerified": "2026-06-26T09:39:40.737Z",
+      "benchmarkSources": [
+        "BigCode paper"
+      ],
+      "lastVerified": "2026-07-05T18:13:57.372Z",
       "confidence": 0.87,
       "pricing": {
         "unit": "infrastructure",
@@ -10357,17 +10910,18 @@
       "bestFor": "StepFun: Step 3.5 Flash is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/stepfun/step-3.5-flash",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
-        "inputPerMillion": 0.09,
+        "inputPerMillion": 0.09999999999999999,
         "outputPerMillion": 0.3
       },
       "contextLength": 262144,
       "metrics": {
         "quality": 0.6883707984390333,
-        "affordability": 0.961348945374537,
+        "affordability": 0.9605783950874047,
         "speed": 0.8600000000000001,
         "context": 0.9030899869919436,
         "privacy": 0.42,
@@ -10388,7 +10942,8 @@
       "bestFor": "StepFun: Step 3.7 Flash supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/stepfun/step-3.7-flash",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -10417,6 +10972,7 @@
       "bestFor": "Switchpoint Router is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -10451,7 +11007,8 @@
       "bestFor": "SWivid/F5-TTS can be evaluated for voice workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/SWivid/F5-TTS",
-      "lastVerified": "2026-06-26T09:46:02.605Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.096Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10480,6 +11037,7 @@
       "bestFor": "Tencent: Hunyuan A13B Instruct is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -10509,7 +11067,8 @@
       "bestFor": "Tencent: Hy3 preview is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/tencent/hy3-preview",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -10545,6 +11104,7 @@
       "bestFor": "tencent/HunyuanImage-3.0 can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/tencent/HunyuanImage-3.0",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:46:01.274Z",
       "confidence": 0.6,
       "pricing": {
@@ -10576,7 +11136,8 @@
       "bestFor": "TenStrip/LTX2.3-10Eros can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/TenStrip/LTX2.3-10Eros",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10605,6 +11166,7 @@
       "bestFor": "TheDrummer: Cydonia 24B V4.1 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -10641,7 +11203,8 @@
       "bestFor": "Tongyi-MAI/Z-Image-Turbo can be evaluated for image workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
-      "lastVerified": "2026-06-26T09:46:01.274Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.024Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10677,7 +11240,8 @@
       "bestFor": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5 can be evaluated for general workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
-      "lastVerified": "2026-06-26T09:46:00.675Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:00.411Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10713,7 +11277,8 @@
       "bestFor": "unsloth/LTX-2.3-GGUF can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/unsloth/LTX-2.3-GGUF",
-      "lastVerified": "2026-06-26T09:46:02.912Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:02.464Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10742,7 +11307,8 @@
       "bestFor": "Upstage: Solar Pro 3 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/upstage/solar-pro-3",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -10778,7 +11344,8 @@
       "bestFor": "vantagewithai/LTX2.3-10Eros-GGUF can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/vantagewithai/LTX2.3-10Eros-GGUF",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10807,6 +11374,7 @@
       "bestFor": "Venice: Uncensored (free) is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -10837,6 +11405,7 @@
       "bestFor": "Short cinematic clips, ads, storyboards, product shots, and motion tests.",
       "source": "Seed registry",
       "sourceUrl": "https://huggingface.co/models?pipeline_tag=image-to-video",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T00:00:00.000Z",
       "confidence": 0.58,
       "pricing": {
@@ -10873,7 +11442,8 @@
       "bestFor": "Wan-AI/Wan2.2-I2V-A14B-Diffusers can be evaluated for video workflows, self-hosting, or custom deployment.",
       "source": "Hugging Face",
       "sourceUrl": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers",
-      "lastVerified": "2026-06-26T09:46:01.991Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:16:01.315Z",
       "confidence": 0.6,
       "pricing": {
         "unit": "infrastructure",
@@ -10902,7 +11472,8 @@
       "bestFor": "Writer: Palmyra X5 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/writer/palmyra-x5",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -10933,7 +11504,8 @@
       "bestFor": "xAI: Grok 4.20 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/x-ai/grok-4.20",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -10964,7 +11536,8 @@
       "bestFor": "xAI: Grok 4.20 Multi-Agent is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/x-ai/grok-4.20-multi-agent",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -10995,7 +11568,8 @@
       "bestFor": "xAI: Grok 4.3 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/x-ai/grok-4.3",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -11025,7 +11599,8 @@
       "bestFor": "xAI: Grok Build 0.1 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/x-ai/grok-build-0.1",
-      "lastVerified": "2026-06-26T09:45:59.887Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -11057,7 +11632,8 @@
       "bestFor": "Xiaomi: MiMo-V2.5 supports visual tasks such as image understanding or generation depending on provider support.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/xiaomi/mimo-v2.5",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -11086,7 +11662,8 @@
       "bestFor": "Xiaomi: MiMo-V2.5-Pro is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -11115,6 +11692,7 @@
       "bestFor": "Z.ai: GLM 4.5 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -11144,6 +11722,7 @@
       "bestFor": "Z.ai: GLM 4.5 Air is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -11174,6 +11753,7 @@
       "bestFor": "Z.ai: GLM 4.5V is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.968Z",
       "confidence": 0.72,
       "pricing": {
@@ -11203,6 +11783,7 @@
       "bestFor": "Z.ai: GLM 4.6 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -11234,6 +11815,7 @@
       "bestFor": "Z.ai: GLM 4.6V is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -11263,6 +11845,7 @@
       "bestFor": "Z.ai: GLM 4.7 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/api/v1/models",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:08:32.967Z",
       "confidence": 0.72,
       "pricing": {
@@ -11292,6 +11875,7 @@
       "bestFor": "Z.ai: GLM 4.7 Flash is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/z-ai/glm-4.7-flash",
+      "benchmarkSources": [],
       "lastVerified": "2026-06-26T09:45:59.892Z",
       "confidence": 0.72,
       "pricing": {
@@ -11321,7 +11905,8 @@
       "bestFor": "Z.ai: GLM 5 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/z-ai/glm-5",
-      "lastVerified": "2026-06-26T09:45:59.892Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.771Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -11350,7 +11935,8 @@
       "bestFor": "Z.ai: GLM 5 Turbo is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/z-ai/glm-5-turbo",
-      "lastVerified": "2026-06-26T09:45:59.891Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
@@ -11379,17 +11965,18 @@
       "bestFor": "Z.ai: GLM 5.1 is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/z-ai/glm-5.1",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
-        "inputPerMillion": 0.98,
-        "outputPerMillion": 3.08
+        "inputPerMillion": 0.966,
+        "outputPerMillion": 3.036
       },
       "contextLength": 202752,
       "metrics": {
         "quality": 0.7661393029380269,
-        "affordability": 0.7636964070634594,
+        "affordability": 0.7657182551514276,
         "speed": 0.66,
         "context": 0.8844941911502239,
         "privacy": 0.42,
@@ -11408,17 +11995,18 @@
       "bestFor": "Z.ai: GLM 5.2 is a general-purpose API model for chat, reasoning, summarization, and tool-using workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/z-ai/glm-5.2",
-      "lastVerified": "2026-06-26T09:45:59.885Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.769Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",
-        "inputPerMillion": 0.95,
+        "inputPerMillion": 0.5,
         "outputPerMillion": 3
       },
       "contextLength": 1048576,
       "metrics": {
         "quality": 0.78,
-        "affordability": 0.7675247325698314,
+        "affordability": 0.7816010242735003,
         "speed": 0.66,
         "context": 1,
         "privacy": 0.42,
@@ -11439,7 +12027,8 @@
       "bestFor": "Z.ai: GLM 5V Turbo is suited for coding, debugging, refactors, and software agent workflows.",
       "source": "OpenRouter",
       "sourceUrl": "https://openrouter.ai/z-ai/glm-5v-turbo",
-      "lastVerified": "2026-06-26T09:45:59.890Z",
+      "benchmarkSources": [],
+      "lastVerified": "2026-07-05T17:15:59.770Z",
       "confidence": 0.72,
       "pricing": {
         "unit": "USD per 1M tokens",

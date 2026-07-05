@@ -1,4 +1,5 @@
 import { appendSyncHistory, upsertModels } from './registry-store.js'
+import { getBenchmarkQuality, getBenchmarkSpeed, derivePrivacyScore, getFullBenchmark } from './benchmarks.js'
 
 const openRouterUrl = 'https://openrouter.ai/api/v1/models'
 const huggingFaceBaseUrl = 'https://huggingface.co/api/models'
@@ -100,6 +101,13 @@ function priceToAffordability(inputPerMillion, outputPerMillion) {
 }
 
 function estimateOpenRouterQuality(modelId, contextScore) {
+  // ── Try benchmark data first ──
+  const benchmarkQuality = getBenchmarkQuality(modelId)
+  if (benchmarkQuality !== null) {
+    return clamp(benchmarkQuality)
+  }
+
+  // ── Fallback: regex-based estimation ──
   const text = modelId.toLowerCase()
   let score = 0.66 + contextScore * 0.12
 
@@ -113,7 +121,7 @@ function estimateOpenRouterQuality(modelId, contextScore) {
     score += 0.12
   }
 
-  // Reasoning/coding specialists — always high quality signal
+  // Reasoning/coding specialists
   if (/(reasoning|r1|r2|thinking|coder|coding|codestral|starcoder)/.test(text)) {
     score += 0.06
   }
@@ -132,6 +140,13 @@ function estimateOpenRouterQuality(modelId, contextScore) {
 }
 
 function estimateOpenRouterSpeed(modelId) {
+  // ── Try benchmark speed data first ──
+  const benchmarkSpeed = getBenchmarkSpeed(modelId)
+  if (benchmarkSpeed !== null) {
+    return clamp(benchmarkSpeed)
+  }
+
+  // ── Fallback: regex-based estimation ──
   const text = modelId.toLowerCase()
   let score = 0.66
 
@@ -144,6 +159,13 @@ function estimateOpenRouterSpeed(modelId) {
   }
 
   return clamp(score)
+}
+
+function benchmarkSourcesForModel(modelIdOrName) {
+  const benchmark = getFullBenchmark(modelIdOrName)
+  if (!benchmark) return []
+
+  return [...new Set([benchmark.qualitySource, benchmark.speedSource].filter(Boolean))]
 }
 
 function openRouterBestFor(category, name) {
@@ -186,6 +208,7 @@ function mapOpenRouterModel(model) {
     bestFor: openRouterBestFor(category, model.name || model.id),
     source: 'OpenRouter',
     sourceUrl: model.id ? `https://openrouter.ai/${model.id}` : openRouterUrl,
+    benchmarkSources: benchmarkSourcesForModel(`${model.id} ${model.name}`),
     lastVerified: new Date().toISOString(),
     confidence: 0.72,
     pricing: {
@@ -199,7 +222,7 @@ function mapOpenRouterModel(model) {
       affordability,
       speed: estimateOpenRouterSpeed(`${model.id} ${model.name}`),
       context: contextScore,
-      privacy: 0.42,
+      privacy: derivePrivacyScore({ access: 'API', provider, id: model.id }),
       availability: 0.82,
     },
   }
@@ -413,6 +436,13 @@ const CURATED_CODING_MODELS = [
 ]
 
 function estimateHuggingFaceQuality(model) {
+  // Try benchmark data first
+  const benchmarkQuality = getBenchmarkQuality(model.id || '')
+  if (benchmarkQuality !== null) {
+    return clamp(benchmarkQuality)
+  }
+
+  // Fallback: popularity-based estimation
   const popularity = Number(model.downloads || 0) + Number(model.likes || 0) * 20
   return clamp(0.48 + Math.log10(popularity + 1) / 8, 0.52)
 }
@@ -439,6 +469,7 @@ function mapHuggingFaceModel(model) {
     bestFor: `${model.id || 'This open model'} can be evaluated for ${category} workflows, self-hosting, or custom deployment.`,
     source: 'Hugging Face',
     sourceUrl: `https://huggingface.co/${model.id}`,
+    benchmarkSources: benchmarkSourcesForModel(model.id || model.modelId || ''),
     lastVerified: new Date().toISOString(),
     confidence: 0.6,
     pricing: {
@@ -536,8 +567,15 @@ export async function syncSources(options = {}) {
   // Always inject curated high-quality coding models so they are never missing
   models.push(...CURATED_CODING_MODELS)
 
-  const writeResult = models.length
-    ? await upsertModels(models, { reason: 'source sync', sources })
+  const enrichedModels = models.map((model) => ({
+    ...model,
+    benchmarkSources: model.benchmarkSources?.length
+      ? model.benchmarkSources
+      : benchmarkSourcesForModel(`${model.id} ${model.name}`),
+  }))
+
+  const writeResult = enrichedModels.length
+    ? await upsertModels(enrichedModels, { reason: 'source sync', sources })
     : undefined
 
   await appendSyncHistory({
@@ -556,4 +594,3 @@ export async function syncSources(options = {}) {
     modelCount: writeResult?.after,
   }
 }
-
