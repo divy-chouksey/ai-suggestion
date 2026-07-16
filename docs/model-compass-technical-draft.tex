@@ -120,14 +120,13 @@ The server applies request logging, CORS headers, rate limiting, input validatio
 The backend loads environment variables from the project-root \texttt{.env} file using \texttt{server/lib/env.js}. The file can be committed as a template or placeholder, but real keys should be removed before pushing.
 
 \begin{lstlisting}[style=code]
-GEMINI_API_KEY=
-OPENAI_API_KEY=
+COHERE_API_KEY=
 API_PORT=8787
 CORS_ORIGINS=http://127.0.0.1:5173,http://localhost:5173
 ARTIFICIAL_ANALYSIS_API_KEY=
 \end{lstlisting}
 
-Gemini is preferred when both \texttt{GEMINI\_API\_KEY} and \texttt{OPENAI\_API\_KEY} are present. OpenAI is used as the fallback provider.
+Cohere is used for structured intent extraction when \texttt{COHERE\_API\_KEY} is set. The default model is \texttt{command-r7b-12-2024}.
 
 \section{External APIs Called}
 
@@ -141,8 +140,7 @@ Gemini is preferred when both \texttt{GEMINI\_API\_KEY} and \texttt{OPENAI\_API\
 \subsection{Prompt Understanding}
 
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Gemini:} \texttt{POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent}. Used for structured intent extraction when \texttt{GEMINI\_API\_KEY} is set.
-  \item \textbf{OpenAI:} \texttt{POST https://api.openai.com/v1/chat/completions}. Uses \texttt{gpt-4o-mini} for structured intent extraction when \texttt{OPENAI\_API\_KEY} is set and Gemini is unavailable or fails.
+  \item \textbf{Cohere:} \texttt{POST https://api.cohere.ai/v2/chat}. Uses \texttt{command-r7b-12-2024} for structured intent extraction when \texttt{COHERE\_API\_KEY} is set.
 \end{itemize}
 
 \subsection{Benchmark Sources}

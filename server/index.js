@@ -23,6 +23,7 @@ import { readRegistry, readSyncHistory } from './lib/registry-store.js'
 import { recommendModels, categories } from './lib/scoring.js'
 import { syncSources } from './lib/source-sync.js'
 import { checkRateLimit } from './lib/rate-limiter.js'
+import { getFullBenchmark } from './lib/benchmarks.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '..')
@@ -217,6 +218,83 @@ async function handleApi(request, response, url, origin) {
         modelCount: registry.models.length,
         lastUpdated: registry.lastUpdated,
       },
+    }, origin)
+    return
+  }
+
+  // ── Registry Diagnostics ──
+  if (url.pathname === '/api/registry/diagnostics' && request.method === 'GET') {
+    const registry = await getCachedRegistry()
+    const models = registry.models
+
+    const nameProviderMap = new Map()
+    const duplicates = []
+    for (const m of models) {
+      const key = `${m.name.toLowerCase()}|${m.provider.toLowerCase()}`
+      if (nameProviderMap.has(key)) {
+        duplicates.push({
+          key,
+          models: [nameProviderMap.get(key), m.id]
+        })
+      } else {
+        nameProviderMap.set(key, m.id)
+      }
+    }
+
+    const brokenOrUnverifiedLinks = models
+      .filter((m) => m.linkStatus === 'broken' || m.linkStatus === 'unverified')
+      .map((m) => ({ id: m.id, name: m.name, sourceUrl: m.sourceUrl, linkStatus: m.linkStatus }))
+
+    const staleOrMissingBenchmarks = models
+      .filter((m) => !m.benchmarkSources || m.benchmarkSources.length === 0)
+      .map((m) => ({ id: m.id, name: m.name }))
+
+    const placeholders = models
+      .filter((m) => m.recordType === 'strategy_template' || m.recordType === 'placeholder')
+      .map((m) => ({ id: m.id, name: m.name, recordType: m.recordType }))
+
+    const lowConfidence = models
+      .filter((m) => m.confidence < 0.65)
+      .map((m) => ({ id: m.id, name: m.name, confidence: m.confidence }))
+
+    sendJson(response, 200, {
+      diagnostics: {
+        duplicateGroups: duplicates,
+        brokenOrUnverifiedLinks,
+        staleOrMissingBenchmarks,
+        placeholderRecords: placeholders,
+        lowConfidenceClassifications: lowConfidence,
+      }
+    }, origin)
+    return
+  }
+
+  // ── Model Detail ──
+  if (url.pathname.startsWith('/api/models/') && request.method === 'GET') {
+    const id = url.pathname.slice('/api/models/'.length)
+    const registry = await getCachedRegistry()
+    const model = registry.models.find((m) => m.id === id)
+    if (!model) {
+      sendJson(response, 404, { error: `Model with ID '${id}' not found.` }, origin)
+      return
+    }
+    const benchmark = getFullBenchmark(`${model.id} ${model.name}`)
+    sendJson(response, 200, {
+      model,
+      benchmark: benchmark || null,
+      endpoints: [
+        {
+          id: `${model.id}-endpoint`,
+          canonicalModelId: model.id,
+          provider: model.provider,
+          routeModelId: model.id,
+          endpointType: model.access === 'API' ? 'first_party' : 'self_hosted',
+          sourceUrl: model.sourceUrl,
+          pricing: model.pricing,
+          contextLength: model.contextLength,
+          availability: 'available',
+        }
+      ]
     }, origin)
     return
   }

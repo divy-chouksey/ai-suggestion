@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
-import type { RecommendedModel, WeightKey, ModelCategory, PromptAnalysis, AdvancedFilters } from '../types'
+import type { RecommendedModel, WeightKey, ModelCategory, PromptAnalysis, AdvancedFilters, StrategyTemplate } from '../types'
 import * as api from '../api/client'
 import { getLocalRecommendations } from '../lib/scoring'
 import { defaultWeights } from '../lib/constants'
@@ -23,6 +23,7 @@ export function useRecommendations() {
     lastUpdated: '',
   })
   const [parserUsed, setParserUsed] = useState<string>('regex')
+  const [strategies, setStrategies] = useState<StrategyTemplate[]>([])
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -48,6 +49,7 @@ export function useRecommendations() {
         )
         setRecommendations(data.recommendations || [])
         setAnalysis(data.analysis || null)
+        setStrategies(data.strategies || [])
         setIsFallback(false)
         setParserUsed(data.parserUsed || 'regex')
         if (data.registry) {
@@ -68,6 +70,7 @@ export function useRecommendations() {
         )
         setRecommendations(fallbackData.recommendations)
         setAnalysis(fallbackData.analysis)
+        setStrategies(fallbackData.strategies || [])
         setIsFallback(true)
         setParserUsed('regex')
       } finally {
@@ -128,6 +131,7 @@ export function useRecommendations() {
     isFallback,
     registryStats,
     parserUsed,
+    strategies,
     inputRef,
 
     // Setters

@@ -3,6 +3,9 @@ import {
   detectCategory,
   analyzePrompt,
   categoryFit,
+  capabilityFit,
+  sourceTrustFactor,
+  isCompatible,
   weightedAdditiveScore,
   recommendModels,
 } from '../scoring.js'
@@ -239,5 +242,128 @@ describe('Golden Test Set (30+ Prompts)', () => {
       const res = await recommendModels(dummyModels, { prompt: text })
       expect(res.analysis.targetCategory).toBe(cat)
     })
+  })
+})
+
+describe('Registry Redesign: Strategy Templates & Source Trust', () => {
+  const strategyModel = {
+    id: 'voice-agent',
+    name: 'Realtime Voice Stack',
+    provider: 'OpenAI / ElevenLabs / Deepgram class',
+    category: 'voice',
+    recordType: 'strategy_template',
+    sourceAuthority: 'seed',
+    linkStatus: 'catalog',
+    primaryUseCases: ['voice'],
+    secondaryUseCases: ['speech_to_text', 'text_to_speech'],
+    access: 'API',
+    metrics: { quality: 0.83, affordability: 0.64, speed: 0.88, context: 0.5, privacy: 0.5, availability: 0.76 },
+    pricing: { inputPerMillion: 0 },
+    contextLength: 16000,
+  }
+
+  const realModel = {
+    id: 'real-voice-model',
+    name: 'Deepgram Nova-2',
+    provider: 'Deepgram',
+    category: 'voice',
+    recordType: 'api_model',
+    sourceAuthority: 'first_party',
+    linkStatus: 'verified',
+    primaryUseCases: ['voice', 'speech_to_text'],
+    secondaryUseCases: [],
+    access: 'API',
+    metrics: { quality: 0.85, affordability: 0.72, speed: 0.92, context: 0.4, privacy: 0.5, availability: 0.9 },
+    pricing: { inputPerMillion: 0 },
+    contextLength: 0,
+  }
+
+  const codeModel = {
+    id: 'code-primary',
+    name: 'Claude Code',
+    provider: 'Anthropic',
+    category: 'code',
+    recordType: 'api_model',
+    sourceAuthority: 'first_party',
+    linkStatus: 'verified',
+    primaryUseCases: ['code'],
+    secondaryUseCases: ['general', 'agent', 'document'],
+    access: 'API',
+    metrics: { quality: 0.97, affordability: 0.5, speed: 0.7, context: 0.93, privacy: 0.48, availability: 0.92 },
+    pricing: { inputPerMillion: 3 },
+    contextLength: 200000,
+  }
+
+  const catalogModel = {
+    id: 'catalog-model',
+    name: 'Generic Catalog Entry',
+    provider: 'SomeProvider',
+    category: 'general',
+    recordType: 'api_model',
+    sourceAuthority: 'aggregator',
+    linkStatus: 'catalog',
+    primaryUseCases: ['general'],
+    secondaryUseCases: [],
+    access: 'API',
+    metrics: { quality: 0.7, affordability: 0.6, speed: 0.6, context: 0.6, privacy: 0.5, availability: 0.7 },
+    pricing: { inputPerMillion: 1 },
+    contextLength: 128000,
+  }
+
+  it('does not recommend strategy templates', async () => {
+    const res = await recommendModels([strategyModel, realModel], { prompt: 'voice transcription agent' })
+    const ids = res.recommendations.map((r) => r.id)
+    expect(ids).not.toContain('voice-agent')
+    expect(ids).toContain('real-voice-model')
+  })
+
+  it('uses secondary use cases for capability fit', () => {
+    // codeModel has secondary use case 'document'
+    const fit = capabilityFit(codeModel, 'document')
+    expect(fit).toBe(0.82)
+  })
+
+  it('returns 1.0 for primary use case match', () => {
+    const fit = capabilityFit(codeModel, 'code')
+    expect(fit).toBe(1)
+  })
+
+  it('applies source trust to lower confidence source records', () => {
+    const firstPartyTrust = sourceTrustFactor({
+      recordType: 'api_model',
+      sourceAuthority: 'first_party',
+      linkStatus: 'verified',
+    })
+    const aggregatorTrust = sourceTrustFactor({
+      recordType: 'hf_repo',
+      sourceAuthority: 'aggregator',
+      linkStatus: 'unverified',
+    })
+    expect(firstPartyTrust).toBe(1)
+    expect(aggregatorTrust).toBeLessThan(firstPartyTrust)
+  })
+
+  it('returns 0 trust for strategy templates', () => {
+    const trust = sourceTrustFactor(strategyModel)
+    expect(trust).toBe(0)
+  })
+
+  it('isCompatible returns false for strategy templates', () => {
+    expect(isCompatible(strategyModel, 'voice')).toBe(false)
+  })
+
+  it('adds warning for catalog links', async () => {
+    const res = await recommendModels([catalogModel], { prompt: 'general assistant chatbot' })
+    const rec = res.recommendations.find((r) => r.id === 'catalog-model')
+    expect(rec).toBeDefined()
+    expect(rec.warnings).toBeDefined()
+    expect(rec.warnings.length).toBeGreaterThan(0)
+    expect(rec.warnings[0]).toContain('catalog')
+  })
+
+  it('returns strategies array in response', async () => {
+    const res = await recommendModels([realModel], { prompt: 'voice agent live call' })
+    expect(res.strategies).toBeDefined()
+    expect(Array.isArray(res.strategies)).toBe(true)
   })
 })

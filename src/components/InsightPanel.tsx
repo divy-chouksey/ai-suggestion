@@ -73,7 +73,7 @@ export function InsightPanel({ winner, targetCategory, parserUsed }: InsightPane
             {parserUsed && parserUsed !== 'regex' && (
               <div>
                 <dt>Understanding</dt>
-                <dd className="parser-badge">{parserUsed === 'gemini' ? '✦ Gemini' : '✦ GPT'}</dd>
+                <dd className="parser-badge">✦ Cohere</dd>
               </div>
             )}
           </dl>

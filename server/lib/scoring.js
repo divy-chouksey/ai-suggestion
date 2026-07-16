@@ -13,6 +13,7 @@
 
 import { parsePromptWithLLM, isLLMAvailable } from './llm-parser.js'
 import { getFullBenchmark, derivePrivacyScore } from './benchmarks.js'
+import { readStrategyTemplates } from './registry-store.js'
 
 const MIN_SCORE = 0.08
 
@@ -299,7 +300,64 @@ export function categoryFit(modelCategory, targetCategory) {
   return 0.16
 }
 
+const targetUseCaseAliases = {
+  general: ['general', 'agent'],
+  code: ['code', 'agent'],
+  image: ['image', 'vision', 'image_generation'],
+  video: ['video', 'video_generation'],
+  voice: ['voice', 'speech_to_text', 'text_to_speech'],
+  music: ['music', 'music_generation'],
+  document: ['document', 'rag', 'embedding', 'reranking'],
+}
+
+const hiddenRecordTypes = new Set(['strategy_template', 'placeholder'])
+
+export function sourceTrustFactor(model) {
+  if (hiddenRecordTypes.has(model.recordType)) return 0
+
+  if (!model.recordType && !model.sourceAuthority) return 1
+
+  const authorityTrust = {
+    first_party: 1,
+    benchmark: 0.97,
+    aggregator: 0.9,
+    curated: 0.86,
+    seed: 0.72,
+    heuristic: 0.65,
+  }[model.sourceAuthority] ?? 0.82
+
+  const typeTrust = {
+    api_model: 1,
+    open_weight_model: 0.92,
+    hosted_open_model: 0.86,
+    hf_repo: 0.78,
+    model_family: 0.7,
+  }[model.recordType] ?? 0.82
+
+  const linkTrust = {
+    verified: 1,
+    unverified: 0.96,
+    catalog: 0.9,
+    broken: 0.5,
+  }[model.linkStatus] ?? 0.96
+
+  return Math.max(0.45, Math.min(1, authorityTrust * typeTrust * linkTrust))
+}
+
+export function capabilityFit(model, targetCategory) {
+  const targetUseCases = targetUseCaseAliases[targetCategory] || [targetCategory]
+  const primary = Array.isArray(model.primaryUseCases) ? model.primaryUseCases : []
+  const secondary = Array.isArray(model.secondaryUseCases) ? model.secondaryUseCases : []
+
+  if (primary.some((useCase) => targetUseCases.includes(useCase))) return 1
+  if (secondary.some((useCase) => targetUseCases.includes(useCase))) return 0.82
+
+  return categoryFit(model.category, targetCategory)
+}
+
 export function isCompatible(model, targetCategory) {
+  if (hiddenRecordTypes.has(model.recordType)) return false
+  if (capabilityFit(model, targetCategory) >= 0.55) return true
   if (model.category === targetCategory) return true
   if (targetCategory === 'code') return model.category === 'general'
   if (targetCategory === 'document') return model.category === 'general' || model.category === 'code'
@@ -324,13 +382,14 @@ export function weightedAdditiveScore(model, targetCategory, weights, qualityFla
   }, 0)
 
   const metricScore = weightedSum / weightSum
-  const fit = categoryFit(model.category, targetCategory)
+  const fit = capabilityFit(model, targetCategory)
   const confidence = model.confidence ?? 0.52
+  const sourceTrust = sourceTrustFactor(model)
 
   const fitFactor = Math.pow(fit, 1.3)
   const confidenceFactor = 0.65 + 0.35 * confidence
 
-  let scaled = metricScore * fitFactor * confidenceFactor * 100
+  let scaled = metricScore * fitFactor * confidenceFactor * sourceTrust * 100
 
   // Non-compensatory: quality floor when quality is flagged as important
   if (qualityFlagged && (model.metrics?.quality ?? 0) < 0.7) {
@@ -348,8 +407,10 @@ export function buildReasons(model, analysis) {
   const metrics = model.metrics || {}
 
   // Category match
-  if (categoryFit(model.category, analysis.targetCategory) >= 0.95) {
+  if (capabilityFit(model, analysis.targetCategory) >= 0.95) {
     reasons.push(`Specialized for ${analysis.targetCategory} workflows`)
+  } else if (capabilityFit(model, analysis.targetCategory) >= 0.8) {
+    reasons.push(`Secondary fit for ${analysis.targetCategory} workflows`)
   }
 
   // Benchmark-based reasons
@@ -404,6 +465,12 @@ export function buildReasons(model, analysis) {
   // Source verification
   if (model.source && model.source !== 'Seed registry') {
     reasons.push(`Data from ${model.source}`)
+  }
+
+  if (model.sourceAuthority === 'first_party') {
+    reasons.push('First-party model identity')
+  } else if (model.sourceAuthority === 'aggregator') {
+    reasons.push('Aggregator-sourced availability')
   }
 
   return reasons.slice(0, 4)
@@ -482,6 +549,8 @@ export async function recommendModels(models, request) {
   const qualityFlagged = analysis.weights.quality >= 2.0
 
   const recommendations = models
+    // Hide strategy templates and non-model records from normal ranking
+    .filter((model) => !hiddenRecordTypes.has(model.recordType))
     // ── Category compatibility ──
     .filter((model) => isCompatible(model, analysis.targetCategory))
     // ── Open-only filter ──
@@ -540,15 +609,21 @@ export async function recommendModels(models, request) {
     // ── Score and sort ──
     .map((model) => ({
       ...model,
-      fit: categoryFit(model.category, analysis.targetCategory),
+      fit: capabilityFit(model, analysis.targetCategory),
+      sourceTrust: sourceTrustFactor(model),
       score: weightedAdditiveScore(model, analysis.targetCategory, analysis.weights, qualityFlagged),
       reasons: buildReasons(model, analysis),
+      warnings: model.linkStatus === 'catalog' ? ['Source link opens a catalog, not a model page'] : [],
     }))
     .sort((a, b) => b.score - a.score)
+
+  const strategyTemplates = await readStrategyTemplates()
+  const strategies = strategyTemplates.filter((t) => t.useCase === analysis.targetCategory)
 
   return {
     analysis,
     recommendations: recommendations.slice(0, limit),
+    strategies,
     totalMatches: recommendations.length,
     parserUsed,
   }

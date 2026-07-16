@@ -9,8 +9,28 @@ type ModelCardProps = {
   isComparing?: boolean
 }
 
+const recordTypeLabels: Record<string, string> = {
+  api_model: 'API Model',
+  open_weight_model: 'Open-Weight',
+  hosted_open_model: 'Hosted Open',
+  hf_repo: 'HF Repo',
+  model_family: 'Model Family',
+  strategy_template: 'Strategy',
+}
+
+const sourceAuthorityLabels: Record<string, string> = {
+  first_party: 'First-party',
+  aggregator: 'Aggregator',
+  benchmark: 'Benchmark',
+  curated: 'Curated',
+  seed: 'Seed',
+  heuristic: 'Heuristic',
+}
+
 export function ModelCard({ model, index, onCompareToggle, isComparing }: ModelCardProps) {
   const logo = getProviderLogo(model.provider)
+  const recordLabel = recordTypeLabels[model.recordType as string] || null
+  const sourceLabel = sourceAuthorityLabels[model.sourceAuthority as string] || null
 
   return (
     <article className="model-card" style={{ transitionDelay: `${index * 80}ms` }}>
@@ -44,6 +64,16 @@ export function ModelCard({ model, index, onCompareToggle, isComparing }: ModelC
         </div>
       </div>
 
+      {/* Model type and source badges */}
+      <div className="model-badges">
+        {recordLabel && (
+          <span className={`model-badge badge-type badge-type-${model.recordType}`}>{recordLabel}</span>
+        )}
+        {sourceLabel && (
+          <span className={`model-badge badge-source badge-source-${model.sourceAuthority}`}>{sourceLabel}</span>
+        )}
+      </div>
+
       <h3>
         {model.sourceUrl ? (
           <a href={model.sourceUrl} target="_blank" rel="noopener noreferrer" className="model-source-link" title="Open model site">
@@ -66,6 +96,15 @@ export function ModelCard({ model, index, onCompareToggle, isComparing }: ModelC
             <li key={idx}>- {reason}</li>
           ))}
         </ul>
+      )}
+
+      {/* Warnings */}
+      {model.warnings && model.warnings.length > 0 && (
+        <div className="model-warnings">
+          {model.warnings.map((warning, idx) => (
+            <span key={idx} className="model-warning-tag">⚠ {warning}</span>
+          ))}
+        </div>
       )}
 
       <div className="card-specs">

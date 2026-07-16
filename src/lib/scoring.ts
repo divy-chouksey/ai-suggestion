@@ -184,7 +184,66 @@ export function categoryFit(modelCategory: ModelCategory, targetCategory: ModelC
   return 0.16
 }
 
+const targetUseCaseAliases: Record<ModelCategory, string[]> = {
+  general: ['general', 'agent'],
+  code: ['code', 'agent'],
+  image: ['image', 'vision', 'image_generation'],
+  video: ['video', 'video_generation'],
+  voice: ['voice', 'speech_to_text', 'text_to_speech'],
+  music: ['music', 'music_generation'],
+  document: ['document', 'rag', 'embedding', 'reranking'],
+}
+
+const hiddenRecordTypes = new Set(['strategy_template', 'placeholder'])
+
+export function sourceTrustFactor(model: ModelProfile) {
+  if (hiddenRecordTypes.has(model.recordType || '')) return 0
+  if (!model.recordType && !model.sourceAuthority) return 1
+
+  const authorityTrust: Record<string, number> = {
+    first_party: 1,
+    benchmark: 0.97,
+    aggregator: 0.9,
+    curated: 0.86,
+    seed: 0.72,
+    heuristic: 0.65,
+  }
+  const typeTrust: Record<string, number> = {
+    api_model: 1,
+    open_weight_model: 0.92,
+    hosted_open_model: 0.86,
+    hf_repo: 0.78,
+    model_family: 0.7,
+  }
+  const linkTrust: Record<string, number> = {
+    verified: 1,
+    unverified: 0.96,
+    catalog: 0.9,
+    broken: 0.5,
+  }
+
+  const trust =
+    (authorityTrust[model.sourceAuthority || ''] ?? 0.82) *
+    (typeTrust[model.recordType || ''] ?? 0.82) *
+    (linkTrust[model.linkStatus || ''] ?? 0.96)
+
+  return Math.max(0.45, Math.min(1, trust))
+}
+
+export function capabilityFit(model: ModelProfile, targetCategory: ModelCategory) {
+  const targetUseCases = targetUseCaseAliases[targetCategory] || [targetCategory]
+  const primary = model.primaryUseCases || []
+  const secondary = model.secondaryUseCases || []
+
+  if (primary.some((useCase) => targetUseCases.includes(useCase))) return 1
+  if (secondary.some((useCase) => targetUseCases.includes(useCase))) return 0.82
+
+  return categoryFit(model.category, targetCategory)
+}
+
 function isCompatible(model: ModelProfile, targetCategory: ModelCategory): boolean {
+  if (hiddenRecordTypes.has(model.recordType || '')) return false
+  if (capabilityFit(model, targetCategory) >= 0.55) return true
   if (model.category === targetCategory) return true
   if (targetCategory === 'code') return model.category === 'general'
   if (targetCategory === 'document') return model.category === 'general' || model.category === 'code'
@@ -218,6 +277,7 @@ export function getLocalRecommendations(
   const maxPriceNum = maxPrice ? Number(maxPrice) : constraints.maxPrice ?? null
 
   const filtered = localModelRegistry
+    .filter((model) => !hiddenRecordTypes.has(model.recordType || ''))
     .filter((model) => isCompatible(model, analysis.targetCategory))
     .filter((model) => !openOnly || model.access !== 'API')
     .filter((model) => {
@@ -248,13 +308,14 @@ export function getLocalRecommendations(
         metricScore = weightedSum / weightSum
       }
 
-      const fit = categoryFit(model.category, analysis.targetCategory)
+      const fit = capabilityFit(model, analysis.targetCategory)
       const confidence = model.confidence ?? 0.52
+      const sourceTrust = sourceTrustFactor(model)
 
       // Improved formula: configurable fit exponent, confidence matters more
       const fitFactor = Math.pow(fit, 1.3)
       const confidenceFactor = 0.65 + 0.35 * confidence
-      const scaled = metricScore * fitFactor * confidenceFactor * 100
+      const scaled = metricScore * fitFactor * confidenceFactor * sourceTrust * 100
       const score = Math.round(Math.max(1, Math.min(99, scaled)))
 
       const modelMetrics = Object.entries(model.metrics)
@@ -263,7 +324,7 @@ export function getLocalRecommendations(
         .map(([name]) => name)
 
       const reasons: string[] = []
-      if (categoryFit(model.category, analysis.targetCategory) >= 0.95) {
+      if (capabilityFit(model, analysis.targetCategory) >= 0.95) {
         reasons.push(`Matches ${analysis.targetCategory} work`)
       }
       if (modelMetrics.includes('affordability')) reasons.push('Strong cost fit')
@@ -274,16 +335,34 @@ export function getLocalRecommendations(
 
       return {
         ...model,
-        fit: categoryFit(model.category, analysis.targetCategory),
+        fit,
+        sourceTrust,
         score,
         reasons: reasons.slice(0, 4),
+        warnings: model.linkStatus === 'catalog' ? ['Source link opens a catalog, not a model page'] : [],
       } as RecommendedModel
     })
     .sort((a, b) => b.score - a.score)
 
+  const strategies = localModelRegistry
+    .filter((model) => model.recordType === 'strategy_template' && (model.category === analysis.targetCategory || model.primaryUseCases?.includes(analysis.targetCategory)))
+    .map((model) => ({
+      id: model.id,
+      name: model.name,
+      useCase: model.category,
+      description: model.bestFor,
+      recommendedComponents: model.id === 'voice-agent' 
+        ? ["Deepgram Nova-2 (STT)", "GPT-4o or Claude 3.5 Sonnet (LLM)", "ElevenLabs Reader/Multilingual v2 (TTS)"]
+        : ["Cohere Embed v3 (Embeddings)", "Pinecone or pgvector (Database)", "Cohere Rerank v3 (Reranking)", "Claude 3.5 Sonnet (LLM)"],
+      exampleProviders: model.id === 'voice-agent'
+        ? ["Deepgram", "OpenAI", "ElevenLabs", "Gemini Live API"]
+        : ["Cohere", "Pinecone", "Anthropic", "Voyage AI"]
+    }))
+
   return {
     analysis,
     recommendations: filtered.slice(0, 8),
+    strategies,
     totalMatches: filtered.length,
   }
 }

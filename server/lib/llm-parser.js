@@ -1,16 +1,12 @@
 /**
  * LLM-based prompt understanding module
- * 
- * Supports two providers:
- *   - Gemini (GEMINI_API_KEY) — preferred, free tier available
- *   - OpenAI (OPENAI_API_KEY) — fallback
- * 
- * Extracts structured ParsedIntent from natural language prompts.
- * Falls back to regex when no API key is configured.
+ *
+ * Uses Cohere (COHERE_API_KEY) for structured intent extraction.
+ * Falls back to regex when no API key is configured or the call fails.
  */
 
-const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
-const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
+const COHERE_URL = 'https://api.cohere.ai/v2/chat'
+const DEFAULT_COHERE_MODEL = 'command-r7b-12-2024'
 
 const SYSTEM_PROMPT = `You are a structured data extraction assistant for an AI model recommendation engine.
 Given a user's natural language description of what they need an AI model for, extract the following:
@@ -44,7 +40,6 @@ const VALID_METRICS = ['quality', 'affordability', 'speed', 'context', 'privacy'
  * Parse LLM response JSON, with lenient extraction.
  */
 function parseResponseJson(text) {
-  // Try to find JSON in the response
   const jsonMatch = text.match(/\{[\s\S]*\}/)
   if (!jsonMatch) return null
 
@@ -98,53 +93,37 @@ function sanitizeParsedIntent(raw) {
   }
 }
 
-/**
- * Call Gemini API for structured intent extraction.
- */
-async function callGemini(prompt, apiKey) {
-  const url = `${GEMINI_URL}?key=${apiKey}`
-
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-      contents: [{ parts: [{ text: `User prompt: "${prompt}"` }] }],
-      generationConfig: {
-        temperature: 0.1,
-        maxOutputTokens: 500,
-        responseMimeType: 'application/json',
-      },
-    }),
-  })
-
-  if (!response.ok) {
-    const err = await response.text().catch(() => '')
-    throw new Error(`Gemini API error ${response.status}: ${err.slice(0, 200)}`)
+function extractCohereText(data) {
+  const content = data.message?.content
+  if (Array.isArray(content)) {
+    const textPart = content.find(part => part?.type === 'text' && typeof part.text === 'string')
+    if (textPart) return textPart.text
   }
 
-  const data = await response.json()
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text
-  if (!text) throw new Error('Empty Gemini response')
-
-  return parseResponseJson(text)
+  if (typeof data.text === 'string') return data.text
+  return null
 }
 
 /**
- * Call OpenAI API for structured intent extraction.
+ * Call Cohere Chat API for structured intent extraction.
  */
-async function callOpenAI(prompt, apiKey) {
-  const response = await fetch(OPENAI_URL, {
+async function callCohere(prompt, apiKey) {
+  const model = process.env.COHERE_MODEL || DEFAULT_COHERE_MODEL
+
+  const response = await fetch(COHERE_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model,
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
-        { role: 'user', content: `User prompt: "${prompt}"` },
+        {
+          role: 'user',
+          content: `Generate a JSON object for this user prompt: "${prompt}"`,
+        },
       ],
       temperature: 0.1,
       max_tokens: 500,
@@ -154,59 +133,44 @@ async function callOpenAI(prompt, apiKey) {
 
   if (!response.ok) {
     const err = await response.text().catch(() => '')
-    throw new Error(`OpenAI API error ${response.status}: ${err.slice(0, 200)}`)
+    throw new Error(`Cohere API error ${response.status}: ${err.slice(0, 200)}`)
   }
 
   const data = await response.json()
-  const text = data.choices?.[0]?.message?.content
-  if (!text) throw new Error('Empty OpenAI response')
+  const text = extractCohereText(data)
+  if (!text) throw new Error('Empty Cohere response')
 
   return parseResponseJson(text)
 }
 
 /**
- * Parse a user prompt using an LLM for structured intent extraction.
- * 
- * Priority: Gemini (if GEMINI_API_KEY set) → OpenAI (if OPENAI_API_KEY set) → null
- * 
+ * Parse a user prompt using Cohere for structured intent extraction.
+ *
  * @param {string} prompt - The user's natural language prompt
- * @returns {Promise<object|null>} ParsedIntent or null if no LLM available
+ * @returns {Promise<object|null>} ParsedIntent or null if Cohere is unavailable
  */
 export async function parsePromptWithLLM(prompt) {
-  const geminiKey = process.env.GEMINI_API_KEY
-  const openaiKey = process.env.OPENAI_API_KEY
+  const cohereKey = process.env.COHERE_API_KEY
 
-  // Try Gemini first (free tier available)
-  if (geminiKey) {
-    try {
-      const result = await callGemini(prompt, geminiKey)
-      if (result) {
-        return { ...result, parserUsed: 'gemini' }
-      }
-    } catch (err) {
-      console.warn('[llm-parser] Gemini failed, trying fallback:', err.message)
-    }
+  if (!cohereKey) {
+    return null
   }
 
-  // Try OpenAI as fallback
-  if (openaiKey) {
-    try {
-      const result = await callOpenAI(prompt, openaiKey)
-      if (result) {
-        return { ...result, parserUsed: 'openai' }
-      }
-    } catch (err) {
-      console.warn('[llm-parser] OpenAI failed:', err.message)
+  try {
+    const result = await callCohere(prompt, cohereKey)
+    if (result) {
+      return { ...result, parserUsed: 'cohere' }
     }
+  } catch (err) {
+    console.warn('[llm-parser] Cohere failed:', err.message)
   }
 
-  // No LLM available
   return null
 }
 
 /**
- * Check if any LLM API key is configured.
+ * Check if the Cohere API key is configured.
  */
 export function isLLMAvailable() {
-  return !!(process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY)
+  return !!process.env.COHERE_API_KEY
 }

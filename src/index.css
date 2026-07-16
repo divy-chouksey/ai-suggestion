@@ -6,12 +6,12 @@
   --text-strong: #f5f7f2;
   --text-muted: #b4bbba;
   --text-soft: #7f8b8b;
-  --accent-green: #7ee7d3;
+  --accent-green: #4e8596;
   --accent-coral: #ff7054;
-  --accent-amber: #ffbf66;
-  --accent-violet: #9b7dff;
+  --accent-amber: #e6b06c;
+  --accent-violet: #8c76db;
   color: var(--text-muted);
-  background: #07080d;
+  background: #000000;
   color-scheme: dark;
   font-family: var(--sans);
   font-size: 16px;

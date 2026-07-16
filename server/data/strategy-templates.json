@@ -1,0 +1,37 @@
+[
+  {
+    "id": "realtime-voice-agent",
+    "name": "Realtime Voice Agent Stack",
+    "useCase": "voice",
+    "description": "Voice Agent = STT (Speech-to-Text) + LLM (Reasoning) + TTS (Text-to-Speech) + Streaming Transport. Designed for low-latency conversational audio applications.",
+    "recommendedComponents": [
+      "Deepgram Nova-2 (STT)",
+      "GPT-4o or Claude 3.5 Sonnet (LLM)",
+      "ElevenLabs Reader/Multilingual v2 (TTS)"
+    ],
+    "exampleProviders": [
+      "Deepgram",
+      "OpenAI",
+      "ElevenLabs",
+      "Gemini Live API"
+    ]
+  },
+  {
+    "id": "embedding-rerank-stack",
+    "name": "Embedding & Reranking RAG Stack",
+    "useCase": "document",
+    "description": "RAG Stack = Vector Embeddings + Vector Database + Cross-Encoder Reranker + LLM. Best for semantic search and precise question-answering over large document catalogs.",
+    "recommendedComponents": [
+      "Cohere Embed v3 (Embeddings)",
+      "Pinecone or pgvector (Database)",
+      "Cohere Rerank v3 (Reranking)",
+      "Claude 3.5 Sonnet (LLM)"
+    ],
+    "exampleProviders": [
+      "Cohere",
+      "Pinecone",
+      "Anthropic",
+      "Voyage AI"
+    ]
+  }
+]

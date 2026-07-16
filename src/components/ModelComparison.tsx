@@ -18,11 +18,9 @@ const metricLabels: Record<string, string> = {
   availability: 'Availability',
 }
 
+const metricKeys = Object.keys(metricLabels)
+
 export function ModelComparison({ models, onRemove, onClose }: ModelComparisonProps) {
-  if (models.length < 2) return null
-
-  const metricKeys = Object.keys(metricLabels)
-
   // Determine best-per-metric
   const bestPerMetric = useMemo(() => {
     const bests: Record<string, string> = {}
@@ -54,6 +52,8 @@ export function ModelComparison({ models, onRemove, onClose }: ModelComparisonPr
       return { id: m.id, strengths, weaknesses }
     })
   }, [models, bestPerMetric])
+
+  if (models.length < 2) return null
 
   return (
     <div className="comparison-overlay">

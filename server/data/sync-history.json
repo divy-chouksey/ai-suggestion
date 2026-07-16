@@ -1,5 +1,71 @@
 [
   {
+    "timestamp": "2026-07-16T04:28:12.016Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 90
+      }
+    ],
+    "added": 0,
+    "updated": 222,
+    "modelCount": 391
+  },
+  {
+    "timestamp": "2026-07-14T16:26:59.531Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 90
+      }
+    ],
+    "added": 15,
+    "updated": 207,
+    "modelCount": 391
+  },
+  {
+    "timestamp": "2026-07-09T16:35:58.627Z",
+    "sources": [
+      "openrouter",
+      "huggingface"
+    ],
+    "results": [
+      {
+        "source": "openrouter",
+        "ok": true,
+        "count": 120
+      },
+      {
+        "source": "huggingface",
+        "ok": true,
+        "count": 90
+      }
+    ],
+    "added": 9,
+    "updated": 213,
+    "modelCount": 376
+  },
+  {
     "timestamp": "2026-07-05T18:23:14.808Z",
     "sources": [
       "openrouter",

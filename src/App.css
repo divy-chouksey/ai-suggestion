@@ -16,40 +16,35 @@
   position: fixed;
   inset: 0;
   z-index: -2;
-  background:
-    linear-gradient(110deg, rgba(21, 173, 166, 0.16), transparent 30%),
-    linear-gradient(250deg, rgba(255, 112, 84, 0.14), transparent 28%),
-    linear-gradient(180deg, #07080d 0%, #101119 52%, #090a0f 100%);
+  background: #000000;
 }
 
+/* Add a very subtle overlay on top of the Vanta canvas to integrate it with a nice vignette/glow */
 .motion-field::before,
 .motion-field::after {
   content: '';
   position: absolute;
-  inset: -25%;
-  opacity: 0.54;
+  inset: 0;
   pointer-events: none;
 }
 
 .motion-field::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 58px 58px;
-  transform: perspective(900px) rotateX(58deg) translateY(-18%);
-  animation: gridDrift 16s linear infinite;
+  /* Subtle vignette/glow overlay */
+  background:
+    linear-gradient(135deg, rgba(78, 133, 150, 0.08), transparent 40%),
+    linear-gradient(315deg, rgba(140, 118, 219, 0.06), transparent 40%),
+    radial-gradient(circle at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
 }
 
 .motion-field::after {
-  background:
-    repeating-linear-gradient(
-      115deg,
-      transparent 0 18px,
-      rgba(123, 220, 201, 0.06) 19px,
-      transparent 22px
-    );
-  mix-blend-mode: screen;
-  animation: scanShift 12s ease-in-out infinite alternate;
+  /* Ultra-faint tech grid lines to compliment the topology nodes */
+  background-image:
+    linear-gradient(rgba(78, 133, 150, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(78, 133, 150, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.7;
+  z-index: 2;
 }
 
 /* ── Layout containers ── */
@@ -1995,3 +1990,278 @@ a:focus-visible {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* ── Model Badges ── */
+
+.model-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.model-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.badge-type {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badge-type-api_model {
+  background: rgba(126, 231, 211, 0.12);
+  color: var(--accent-teal);
+}
+
+.badge-type-open_weight_model {
+  background: rgba(155, 125, 255, 0.12);
+  color: var(--accent-purple, #9b7dff);
+}
+
+.badge-type-hosted_open_model {
+  background: rgba(155, 125, 255, 0.08);
+  color: var(--accent-purple, #9b7dff);
+}
+
+.badge-type-hf_repo {
+  background: rgba(255, 200, 50, 0.1);
+  color: #ffc832;
+}
+
+.badge-type-model_family {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-soft);
+}
+
+.badge-type-strategy_template {
+  background: rgba(255, 112, 84, 0.12);
+  color: #ff7054;
+}
+
+.badge-source {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.badge-source-first_party {
+  background: rgba(80, 200, 120, 0.1);
+  color: #50c878;
+}
+
+.badge-source-aggregator {
+  background: rgba(100, 149, 237, 0.1);
+  color: #6495ed;
+}
+
+.badge-source-benchmark {
+  background: rgba(126, 231, 211, 0.08);
+  color: var(--accent-teal);
+}
+
+.badge-source-curated {
+  background: rgba(255, 175, 50, 0.1);
+  color: #ffaf32;
+}
+
+.badge-source-seed {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-soft);
+}
+
+.badge-source-heuristic {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-soft);
+  opacity: 0.7;
+}
+
+/* ── Model Warnings ── */
+
+.model-warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+.model-warning-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 175, 50, 0.08);
+  border: 1px solid rgba(255, 175, 50, 0.15);
+  color: #ffaf32;
+  line-height: 1.4;
+}
+
+/* ── Strategy Templates Section ── */
+
+.strategy-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.strategy-section-header {
+  margin-bottom: 24px;
+}
+
+.strategy-section-header h3 {
+  color: var(--text-strong);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 4px 0 8px;
+}
+
+.strategy-subtitle {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.strategy-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.strategy-card:hover {
+  border-color: rgba(255, 112, 84, 0.2);
+  box-shadow: 0 4px 24px rgba(255, 112, 84, 0.06);
+}
+
+.strategy-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.strategy-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255, 112, 84, 0.15), rgba(255, 175, 50, 0.1));
+  color: #ff7054;
+  border: 1px solid rgba(255, 112, 84, 0.15);
+}
+
+.strategy-card h4 {
+  color: var(--text-strong);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.strategy-description {
+  color: var(--text-body);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.strategy-components {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.strategy-components small {
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.strategy-components ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.strategy-components li {
+  color: var(--text-body);
+  font-size: 13px;
+  padding: 4px 0;
+  padding-left: 14px;
+  position: relative;
+}
+
+.strategy-components li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-teal);
+  font-size: 11px;
+}
+
+.strategy-providers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.strategy-providers small {
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.strategy-provider-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.strategy-provider-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-body);
+  transition: background 0.2s ease;
+}
+
+.strategy-provider-tag:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 600px) {
+  .strategy-grid {
+    grid-template-columns: 1fr;
+  }
+}

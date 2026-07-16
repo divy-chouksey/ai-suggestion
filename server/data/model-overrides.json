@@ -1,0 +1,42 @@
+{
+  "curated-claude-3-7-sonnet": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent", "document", "vision", "rag"]
+  },
+  "curated-claude-3-5-sonnet": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent", "document", "vision", "rag"]
+  },
+  "curated-gpt-4o": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent", "document", "vision", "rag"]
+  },
+  "curated-deepseek-v3": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent", "document"]
+  },
+  "curated-deepseek-r1": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent"]
+  },
+  "curated-gemini-2-5-pro": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent", "document", "vision", "rag"]
+  },
+  "curated-gemini-2-5-flash": {
+    "primaryUseCases": ["code"],
+    "secondaryUseCases": ["general", "agent", "document", "vision", "rag"]
+  },
+  "openrouter-anthropic-claude-3-5-sonnet": {
+    "primaryUseCases": ["general"],
+    "secondaryUseCases": ["code", "agent", "document", "vision", "rag"]
+  },
+  "openrouter-openai-gpt-4o": {
+    "primaryUseCases": ["general"],
+    "secondaryUseCases": ["code", "agent", "document", "vision", "rag"]
+  },
+  "openrouter-google-gemini-2-5-pro": {
+    "primaryUseCases": ["general"],
+    "secondaryUseCases": ["code", "agent", "document", "vision", "rag"]
+  }
+}

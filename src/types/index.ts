@@ -9,11 +9,40 @@ export type ModelCategory =
   | 'music'
   | 'document'
 
+export type ModelUseCase =
+  | ModelCategory
+  | 'agent'
+  | 'rag'
+  | 'vision'
+  | 'image_generation'
+  | 'video_generation'
+  | 'speech_to_text'
+  | 'text_to_speech'
+  | 'music_generation'
+  | 'embedding'
+  | 'reranking'
+
+export type ModelRecordType =
+  | 'api_model'
+  | 'open_weight_model'
+  | 'hosted_open_model'
+  | 'hf_repo'
+  | 'model_family'
+  | 'strategy_template'
+
+export type SourceAuthority = 'first_party' | 'aggregator' | 'benchmark' | 'curated' | 'seed' | 'heuristic'
+export type LinkStatus = 'verified' | 'unverified' | 'catalog' | 'broken'
+
 export type ModelProfile = {
   id: string
   name: string
   provider: string
   category: ModelCategory
+  primaryUseCases?: ModelUseCase[]
+  secondaryUseCases?: ModelUseCase[]
+  recordType?: ModelRecordType
+  sourceAuthority?: SourceAuthority
+  linkStatus?: LinkStatus
   access: 'API' | 'Open source' | 'Hosted open model'
   modalities: string[]
   bestFor: string
@@ -41,7 +70,9 @@ export type ModelProfile = {
 export type RecommendedModel = ModelProfile & {
   fit: number
   score: number
+  sourceTrust?: number
   reasons?: string[]
+  warnings?: string[]
 }
 
 export type WeightKey = keyof ModelProfile['metrics']
@@ -84,7 +115,7 @@ export type ParsedIntent = {
   excludeModels: string[]
   negations: WeightKey[]
   useCaseSummary: string
-  parserUsed: 'gemini' | 'openai' | 'regex'
+  parserUsed: 'gemini' | 'openai' | 'cohere' | 'regex'
 }
 
 // ─── Advanced Filter Types ───
@@ -113,9 +144,19 @@ export type RecommendationRequest = {
   filters?: AdvancedFilters
 }
 
+export type StrategyTemplate = {
+  id: string
+  name: string
+  useCase: ModelUseCase
+  description: string
+  recommendedComponents: string[]
+  exampleProviders: string[]
+}
+
 export type RecommendationResponse = {
   analysis: PromptAnalysis
   recommendations: RecommendedModel[]
+  strategies?: StrategyTemplate[]
   totalMatches: number
   parserUsed?: string
   registry?: {

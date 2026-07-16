@@ -22,6 +22,39 @@ function App() {
   const [compareIds, setCompareIds] = useState<Set<string>>(new Set())
   const [showComparison, setShowComparison] = useState(false)
 
+  // Initialize Vanta.js topology background
+  useEffect(() => {
+    let vantaEffect: any = null
+    const initVanta = () => {
+      if (typeof window !== 'undefined' && (window as any).VANTA?.TOPOLOGY) {
+        vantaEffect = (window as any).VANTA.TOPOLOGY({
+          el: ".motion-field",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x4e8596,
+          backgroundColor: 0x0
+        })
+      }
+    }
+
+    initVanta()
+
+    // Safety timeout in case the CDN script is still finishing loading/parsing
+    const timeout = setTimeout(() => {
+      if (!vantaEffect) initVanta()
+    }, 500)
+
+    return () => {
+      if (vantaEffect) vantaEffect.destroy()
+      clearTimeout(timeout)
+    }
+  }, [])
+
   const handleCompareToggle = useCallback((modelId: string) => {
     setCompareIds((prev) => {
       const next = new Set(prev)
@@ -132,7 +165,7 @@ function App() {
       {rec.parserUsed === 'regex' && rec.hasSubmitted && (
         <div className="fallback-warning-bar" role="status">
           <p>
-            <strong>Limited understanding:</strong> Configure a Gemini or OpenAI API key for richer prompt parsing.
+            <strong>Limited understanding:</strong> Configure a Cohere API key for richer prompt parsing.
           </p>
         </div>
       )}
@@ -208,6 +241,46 @@ function App() {
             ) : (
               <div className="empty-results-card">
                 <p>No models match the current filter parameters. Tweak filters or search query.</p>
+              </div>
+            )}
+
+            {/* Strategy Templates Section */}
+            {rec.strategies && rec.strategies.length > 0 && (
+              <div className="strategy-section">
+                <div className="strategy-section-header">
+                  <div className="section-kicker">Suggested architecture</div>
+                  <h3>Strategy Templates</h3>
+                  <p className="strategy-subtitle">
+                    These are architectural patterns, not individual models. Combine the suggested components for a complete solution.
+                  </p>
+                </div>
+                <div className="strategy-grid">
+                  {rec.strategies.map((strategy) => (
+                    <article className="strategy-card" key={strategy.id}>
+                      <div className="strategy-card-header">
+                        <span className="strategy-badge">Strategy</span>
+                        <h4>{strategy.name}</h4>
+                      </div>
+                      <p className="strategy-description">{strategy.description}</p>
+                      <div className="strategy-components">
+                        <small>Recommended components</small>
+                        <ul>
+                          {strategy.recommendedComponents.map((comp, idx) => (
+                            <li key={idx}>{comp}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="strategy-providers">
+                        <small>Example providers</small>
+                        <div className="strategy-provider-tags">
+                          {strategy.exampleProviders.map((provider, idx) => (
+                            <span key={idx} className="strategy-provider-tag">{provider}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             )}
           </section>
