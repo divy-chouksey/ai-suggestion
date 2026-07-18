@@ -361,7 +361,7 @@ export function getLocalRecommendations(
 
   return {
     analysis,
-    recommendations: filtered.slice(0, 8),
+    recommendations: filtered.slice(0, 16),
     strategies,
     totalMatches: filtered.length,
   }

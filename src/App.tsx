@@ -21,6 +21,7 @@ function App() {
   // Comparison mode state
   const [compareIds, setCompareIds] = useState<Set<string>>(new Set())
   const [showComparison, setShowComparison] = useState(false)
+  const [showScoring, setShowScoring] = useState(false)
 
   // Initialize Vanta.js topology background
   useEffect(() => {
@@ -125,7 +126,7 @@ function App() {
 
       <header className={`topbar ${rec.hasSubmitted ? 'topbar-compact' : ''}`}>
         <a className="brand" href="/" aria-label="Model Compass home">
-          <span className="brand-mark">MC</span>
+          <img className="brand-logo-img" src="/brand-logo.png" alt="" />
           <span>
             <strong>Model Compass</strong>
             <small>Dynamic AI model advisor</small>
@@ -284,13 +285,6 @@ function App() {
               </div>
             )}
           </section>
-
-          <ScoringPanel
-            analysis={rec.analysis}
-            customWeights={rec.customWeights}
-            onWeightChange={rec.handleWeightChange}
-            onReset={rec.resetWeights}
-          />
         </section>
 
         <SyncHistoryPanel
@@ -298,6 +292,57 @@ function App() {
           registryStats={rec.registryStats}
         />
       </div>
+
+      {/* Floating Scoring Weights Toggle Button */}
+      {rec.hasSubmitted && (
+        <button
+          className="scoring-float-btn"
+          type="button"
+          onClick={() => setShowScoring(true)}
+          title="Tune scoring weights"
+          aria-label="Tune scoring weights"
+        >
+          <svg className="sliders-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="4" y1="21" x2="4" y2="14"></line>
+            <line x1="4" y1="10" x2="4" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="3"></line>
+            <line x1="20" y1="21" x2="20" y2="16"></line>
+            <line x1="20" y1="12" x2="20" y2="3"></line>
+            <line x1="1" y1="14" x2="7" y2="14"></line>
+            <line x1="9" y1="8" x2="15" y2="8"></line>
+            <line x1="17" y1="16" x2="23" y2="16"></line>
+          </svg>
+          <span className="float-btn-text">Tune Weights</span>
+        </button>
+      )}
+
+      {/* Scoring weights drawer overlay */}
+      {showScoring && (
+        <div className="scoring-overlay" onClick={() => setShowScoring(false)}>
+          <div className="scoring-drawer" onClick={(e) => e.stopPropagation()}>
+            <div className="scoring-drawer-header">
+              <h3>Configuration</h3>
+              <button
+                className="scoring-close-btn"
+                type="button"
+                onClick={() => setShowScoring(false)}
+                aria-label="Close weights panel"
+              >
+                ✕ Close
+              </button>
+            </div>
+            <div className="scoring-drawer-content">
+              <ScoringPanel
+                analysis={rec.analysis}
+                customWeights={rec.customWeights}
+                onWeightChange={rec.handleWeightChange}
+                onReset={rec.resetWeights}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Comparison Overlay */}
       {showComparison && compareModels.length >= 2 && (

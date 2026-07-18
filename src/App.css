@@ -79,19 +79,11 @@
   text-decoration: none;
 }
 
-.brand-mark {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(51, 213, 197, 0.9), rgba(255, 113, 85, 0.86)),
-    #15171f;
-  color: #081012;
-  font-size: 13px;
-  font-weight: 900;
+.brand-logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(126, 231, 211, 0.45));
 }
 
 .brand strong,
@@ -539,10 +531,8 @@ p {
 .results-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
-  grid-template-rows: auto auto;
   grid-template-areas:
-    "stack   insight"
-    "stack   scoring";
+    "stack   insight";
   gap: 18px;
   margin-top: 14px;
 }
@@ -553,12 +543,6 @@ p {
 
 .results-layout > .results-stack {
   grid-area: stack;
-}
-
-.results-layout > .system-panel {
-  grid-area: scoring;
-  padding: 28px;
-  align-self: start;
 }
 
 .results-stack {
@@ -587,8 +571,8 @@ p {
 /* ── Model Grid & Cards ── */
 .model-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
 }
 
 .model-card,
@@ -599,10 +583,10 @@ p {
 .model-card {
   display: flex;
   min-width: 0;
-  min-height: 420px;
+  min-height: 320px;
   flex-direction: column;
-  gap: 16px;
-  padding: 20px;
+  gap: 10px;
+  padding: 16px;
   opacity: 0;
   transform: scale(0.9) translateY(32px);
   transition: 
@@ -700,9 +684,15 @@ p {
 
 .model-card h3 {
   color: var(--text-strong);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.12;
+}
+
+.model-card p {
+  font-size: 13.5px;
+  line-height: 1.45;
+  margin: 0;
 }
 
 .score-row {
@@ -712,14 +702,14 @@ p {
 
 .score-row strong {
   color: var(--accent-amber);
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1;
 }
 
 .score-row span {
   color: var(--text-soft);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -727,13 +717,13 @@ p {
 
 .meter-list {
   display: grid;
-  gap: 9px;
+  gap: 6px;
 }
 
 .meter {
   display: grid;
-  grid-template-columns: 92px 1fr 40px;
-  gap: 8px;
+  grid-template-columns: 72px 1fr 34px;
+  gap: 6px;
   align-items: center;
 }
 
@@ -1316,17 +1306,12 @@ a:focus-visible {
   .results-layout {
     grid-template-areas:
       "insight"
-      "stack"
-      "scoring";
+      "stack";
   }
 
   .insight-panel {
     min-height: auto;
     gap: 28px;
-  }
-
-  .system-panel {
-    position: static;
   }
 }
 
@@ -2264,4 +2249,129 @@ a:focus-visible {
   .strategy-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── Floating Tuning Weights Button ── */
+.scoring-float-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--accent-green), rgba(51, 213, 197, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #081012;
+  font-family: 'Forum', Georgia, serif;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    0 0 16px rgba(126, 231, 211, 0.2);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scoring-float-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(126, 231, 211, 0.4);
+}
+
+.scoring-float-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Scoring Drawer Overlay & Drawer ── */
+.scoring-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(4, 5, 9, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.25s ease;
+}
+
+.scoring-drawer {
+  width: 440px;
+  max-width: 100%;
+  height: 100%;
+  background: rgba(10, 11, 16, 0.95);
+  backdrop-filter: blur(30px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scoring-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scoring-drawer-header h3 {
+  margin: 0;
+  font-family: 'Forum', Georgia, serif;
+  font-size: 20px;
+  color: var(--text-strong);
+  font-weight: normal;
+}
+
+.scoring-close-btn {
+  background: rgba(255, 112, 84, 0.1);
+  border: 1px solid rgba(255, 112, 84, 0.2);
+  border-radius: 6px;
+  padding: 6px 14px;
+  color: var(--accent-coral);
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scoring-close-btn:hover {
+  background: rgba(255, 112, 84, 0.18);
+  border-color: var(--accent-coral);
+  transform: translateY(-1px);
+}
+
+.scoring-drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.scoring-drawer-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scoring-drawer-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+.scoring-drawer .system-panel {
+  position: static;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 0;
+  width: 100%;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }

@@ -528,7 +528,7 @@ export async function recommendModels(models, request) {
     analysis.isCustomized = false
   }
 
-  const limit = Number.isFinite(Number(request.limit)) ? Math.min(Math.max(Number(request.limit), 1), 24) : 8
+  const limit = Number.isFinite(Number(request.limit)) ? Math.min(Math.max(Number(request.limit), 1), 48) : 16
   const openOnly = Boolean(request.openOnly)
   const maxPrice = Number.isFinite(Number(request.maxInputPricePerMillion))
     ? Number(request.maxInputPricePerMillion)
